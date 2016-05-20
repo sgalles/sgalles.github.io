@@ -1,0 +1,47 @@
+= "Unit Integrated Tests" for integrator objects
+
+Whether I use interaction based testing or state based testing I usually write "real" unit tests in the sense that only one real object is involved (the SUT, System Under Test) and only stubs and mocks are used for the fixture. It usually is the only way to easily get a good code coverage (or at least to easily specifically cover some parts of the code )
+
+
+
+However, Lately, when testing Facade or Adapter objects he seemed to me that the unit tests for these objects were :
+
+- too complicated
+
+- too...useless
+
+
+
+For most Facade or Adapter objects :
+
+- They're stateless, so let's forget state based testing, we must use mocks
+
+- They're highly coupled to the contract of the adapted objects (by definition of a Facade or of an Adapter)
+
+
+
+This kind of class does nothing clever, they basically chain one or multiples calls. They may have bug though if they do not respect the contracts of the adapted classes.
+
+
+
+So a unit test for this kind of class depends more on the contract of the mocked objects, than on the behavior of the class under test. A very clear test smell.
+
+
+
+Even worse, the fixtures for the mocks are going to closely mimick the code of the SUT (if a method of a Facade calls an object A and then an object B, the fixture for the test on mocks and stubs will tell the exact same thing).
+
+
+
+In this specific case the unit test does not provide an orthogonal view of the behavior implemented by the code (the usual value of a unit test) ; it is the exact same view. If I make a wrong assumption on the contract of the adapted objects, I'm going to make the same exact mistake both in the test and then in the code (TDDly speaking)
+
+
+
+The problem basically is that the job of this kind of objects is to integrate other objects in the system. So he seemed to me that it is very hard to try to test an integration behavior in isolation.
+
+
+
+That's why, now, when I must deal with objects that heavily depend on the contract of the collaborating objects but do not do anything complicated, "integrator objects", I use integrated tests. 
+
+
+
+However when I encounter an object that heavily depend on the contract of the collaborating objects and does many complicated things, it just means that it is too hard to test, I refactor.

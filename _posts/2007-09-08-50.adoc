@@ -1,0 +1,38 @@
+= An other Nautilus script : create directory with date
+
+I've link:http://userstories.blogspot.com/2007/09/nautilus-scripts.html[already described] how to add custom scripts for Gnome file manager, Nautilus. So here is a an other simple script : it allows to create a directory with the name prefixed by the current date, via the contextual menu (right click) of Nautilus in the window of an other directory.
+
+Just type the name of the directory in the popup dialogue ; spaces will automatically replaced by underscores. 
+
+
+
+You must install link:http://xdialog.dyns.net/[XDialog] to be able to use this script.
+
+On Ubuntu :
+
+
+
+[source,bash]
+----
+sudo apt-get install xdialog
+
+----
+
+
+And here is the script :
+
+
+
+[source,bash]
+----
+#!/bin/sh
+
+CURRENTDATE=`date +%y.%m.%d`
+DIRNAME=`Xdialog --title "Directory with date creation" --inputbox "Date : $CURRENTDATE\nDirectory name ?" 8 45 2>&1`
+case $? in
+0) mkdir $CURRENTDATE.${DIRNAME// /_};;
+1) exit;;
+esac
+
+
+----

@@ -1,0 +1,20 @@
+= Linux and Logitech MX mouses resolution
+
+Without its real driver, my Logitech MX 510 mouse is seen by Linux as a 400 cpi resolution mouse. Actually it can be used in 800 cpi thanks to link:http://www.bedroomlan.org/~alexios/coding_lmctl.html[lmctl]
+
+
+
+I've added this script to the 'Startup Program' list of Gnome :
+
+
+
+[source,bash]
+----
+#!/bin/sh
+lmctl -8
+xmodmap -e "pointer = 1 2 3 4 5 8 9 6 7"
+
+----
+
+
+The xmodmap call allows to properly configure the thumb buttons.

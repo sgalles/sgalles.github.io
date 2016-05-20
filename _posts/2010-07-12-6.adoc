@@ -1,0 +1,7 @@
+= Hibernate build infrastructure switching from Maven to Gradle
+
+In the world of build tools this is big news : Steve Ebersole announced that link:http://community.jboss.org/wiki/Gradlewhy[he wanted to migrate from Maven to Gradle] for the Hibernate project. A link:http://community.jboss.org/docs/DOC-13761[list of reasons] is given for the switch (and I utterly understand what they mean).
+
+
+
+Well, it is a very good incentive to try Gradle (and really Groovy + Ivy is a very enticing combination).

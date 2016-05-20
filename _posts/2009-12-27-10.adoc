@@ -1,0 +1,7 @@
+= Barbara Liskov : The Power of Abstraction
+
+Great, great link:http://www.infoq.com/presentations/liskov-power-of-abstraction[talk]
+
+
+
+Ho ! By the way, didn't she sort of tell that Checked Exceptions was not a good idea ? (at around 37:30 during the talk). And it was known 30 years ago...

@@ -1,0 +1,37 @@
+= Fun with new Ceylon M5 syntax
+
+As a new dev version of the Ceylon Eclipse IDE was pushed, let's play with the syntax  
+
+
+
+[String,Number,Boolean,String] fooBarTuple = ["foo",1,true,"bar"];
+
+// can be seen as a sequence with this syntax
+
+[Number|String|Boolean...] fooBarSequence = fooBarTuple;
+
+// or this alternate sequencer
+
+[] fooBarSequenceAlternate = fooBarTuple;
+
+// can be seen as an iterable
+
+{Number|String|Boolean...} fooBarIterable = fooBarSequence;
+
+// create a new tuple with the first tuple    [Number,String,Number,Boolean,String] fooBarTuple42 = [42,fooBarTuple...];
+
+// or a new iterable
+
+{Number|String|Boolean...} fooBarIterable42 = {42,fooBarTuple42...};
+
+// This is too verbose : define an alias
+
+interface MyHeterogenousType => [Number|String|Boolean...];
+
+MyHeterogenousType seenAsMyType = fooBarSequence;
+
+// or use type inferencecompute
+
+value fooBarTupleValue = fooBarTuple;
+
+Boolean vrai = fooBarTupleValue[2];

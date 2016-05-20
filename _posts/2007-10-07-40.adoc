@@ -1,0 +1,3 @@
+= XMLRPC/Ruby presentation for TSP
+
+The slides of my presentation on the implementation of a link:http://cvs.savannah.nongnu.org/viewvc/rubytsp/?root=tsp[TSP consumer in Ruby] for the first link:http://savannah.nongnu.org/projects/tsp[TSP] workshop are archived link:http://ftp.cc.uoc.gr/mirrors/nongnu.org/tsp/events/First_TSP_Workshop_27march2007/rubytsp.pdf[here].

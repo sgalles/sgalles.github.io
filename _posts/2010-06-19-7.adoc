@@ -1,0 +1,10 @@
+= Convert M4A/AAC file to and from WAV file on Linux
+
+May be useful to create M4A/ACC files for phone ringtones, use faad and faac command line utilities :
+
+
+
+* faad foo.aac creates a foo.wav file
+* faac foo.wav create a foo.acc file
+
+

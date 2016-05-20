@@ -1,0 +1,19 @@
+= I want closures in Java !
+
+It's true, trying other programming languages, different enough from your main programming language make you a better programmer/designer in general.
+
+
+
+My main programming language is Java, but I also do a lot of Ruby, and it definitely helps me to find new technics in Java.
+
+
+
+Now, the problem is : *the more I use closures in Ruby, the more I miss closures in Java...*
+
+
+
+However sometimes, even in Java, the only answer to some OOP problem is some sort of closure, implemented via a callback interface with an anonymous inner class. But the syntax cost of such a construct is very high. All the more so since only final local variables can be used in the anonymous inner class.
+
+
+
+So. I do hope closure will make it in the next release of Java.

@@ -1,0 +1,7 @@
+= Continuous Integration and test environment availability
+
+When a developper does not have an environment to run the unit tests of a projet, never allows this team member to check in, even if you have a continuous integration server running.
+
+
+
+If the build is broken, this programmer will have to perform several check in with the new code and wait for the next build in order to know if the build was fixed. Et voilà, the continuous integration server has become the test environment for this person...

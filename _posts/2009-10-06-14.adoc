@@ -1,0 +1,3 @@
+= Cloned Git repository in DropBox folder
+
+Nice and easy way to setup a Git server : link:http://www.cimgf.com/2008/06/03/version-control-makes-you-a-better-programmer/[a cloned git repository in a DropBox folder]. This is brilliant and It works very well (see the Collaboration part of the article).

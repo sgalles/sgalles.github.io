@@ -1,0 +1,25 @@
+= An old PC used as an A2DP bluetooth receiver
+
+Works for me with Linux Mint 12.
+
+
+
+The tutorials I found explain the part where we must add
+
+
+
+_Enable=Source_ 
+
+in /etc/bluetooth/audio.conf
+
+
+
+but I had a hard time to figure out that I had to modify /etc/pulse/default.pa and add
+
+_load-module module-switch-on-connect_ 
+
+_load-module module-loopback_ 
+
+
+
+else the sink/source are not automatically connected.

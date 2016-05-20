@@ -1,0 +1,77 @@
+= Sanitize dates in podcast title with groovy + jid3lib
+
+When I sort the podcasts I download by their ID3 titles, I want to see an older episode sorted after a newer episode.
+
+
+
+Here is a groovy script that modifies the MP3 title of an MP3 file passed as first parameter of the script, and replaces any dd.mm.20yy date by a 20yy.mm.dd date. It also moves the date at the beginning of the title.
+
+
+
+You need the link:http://javamusictag.sourceforge.net/[Java ID3 Tag Library (jid3lib)] and an embeddable Groovy (groovy-all.jar)
+
+
+
+Now in order to run the script after each download, your podcast receiver must be able to run a custom command after each download. You can use link:http://juicereceiver.sourceforge.net/[Juice].
+
+
+
+So here is a quick and dirty script _sanitize_dates.groovy_  :
+
+
+
+
+
+[source,ruby]
+----
+import org.farng.mp3.*
+
+TagOptionSingleton.getInstance().setOriginalSavedAfterAdjustingID3v2Padding(false)
+
+def readMp3Title(filepath) {
+    def mp3file = new MP3File(filepath) 
+    mp3file.getID3v2Tag().getSongTitle()
+}
+
+def writeMp3Title(filepath,title) {
+    def mp3file = new MP3File(filepath) 
+    mp3file.getID3v2Tag().setSongTitle(title)
+    mp3file.save()
+}
+
+def sanitizeTitle(title,action) {
+    def m = (title =~ /^(.*)([0-9][0-9])\.([0-9][0-9])\.(20[0-9][0-9])(.*)$/)
+    if(m){
+       def g = m[0]
+       action("" + g[4] + "." + g[3] + "." + g[2] + " " + g[1] + g[5])
+    }
+}
+
+
+def filepath = args[0]
+def title = readMp3Title(filepath)
+
+println "Original title:${title}"
+sanitizeTitle(title) { sanitizedTitle ->
+     writeMp3Title(filepath,sanitizedTitle)
+     println "Title after sanitization:${readMp3Title(filepath)}"
+}
+
+
+
+----
+
+
+
+
+In the preferences of Juice you can use _Run this command after each download_  with for exemple :
+
+
+
+
+
+[source,bash]
+----
+/usr/bin/java -cp /home/me/javalibs/groovy-all.jar:/home/me/javalibs/jid3lib.jar groovy.lang.GroovyShell /home/me/bin/sanitize_dates.groovy  "%f"
+
+----

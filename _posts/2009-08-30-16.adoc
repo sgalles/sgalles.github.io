@@ -1,0 +1,49 @@
+= Backup with rsync and cygwin on Windows
+
+I recently had to setup an automatic backup scheme for a desktop Windows PC used for office tasks. I usually try to avoid complicated backup software that tend to store the backups in a proprietary format. I want to be able to browse the files in the backup, and copy one file to recover the content.
+
+
+
+On UNIX/Linux I use rsync and thanks to Cygwin I was able to do the same thing on Windows. The goal for the script was :
+
+
+
+* Must backup two directories into one directory located on an USB key drive
+* Must not delete any file in the backup
+* Must always keep the old versions of any updated file
+
+
+Here is a bash script that backups two directories foo1 and foo2
+
+
+
+[source,bash]
+----
+#!/bin/sh
+SRCDIR="/cygdrive/c/links/foo1 /cygdrive/c/links/foo2"
+DESTDIR="/cygdrive/J/backupdir"
+
+OLDBDIR="old."`date +%F`
+
+rsync -avb  --backup-dir=$OLDBDIR --modify-window=2 $SRCDIR $DESTDIR
+
+----
+
+
+
+
+* links actually is a symlink to the directory that contains foo1 and foo2. I created this symlink with the ln -s command as the path to the parent directory of foo1 and foo2 had spaces and I didn't want to deal with path escaping issues.
+* --modify-window=2 is necessary on windows, else the whole set of file is saved all the time.
+* --delete can be added to the rsync command if we want the deleted files to be removed from the backup
+
+
+Then a .bat file is created in order to run the script with a double click :
+
+
+
+[source,bash]
+----
+set PATH=%PATH%;/cygdrive/c/cygwin/bin
+bash.exe backup.sh
+
+----

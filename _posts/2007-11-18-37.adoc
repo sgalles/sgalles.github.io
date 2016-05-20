@@ -1,0 +1,23 @@
+= Convert an image to PDF with Gimp
+
+In order to have an image printed by a professional printing service, I had to export the image created with Gimp to a PDF file. Here is how to do that.
+
+
+
+
+
+* With Gimp save the image as a PS file, with the right size in the option dialog box (for instance, for an A5 dimension choose 148x210 mm)
+
+
+* In a terminal convert the ps file to a pdf file, with the matching size
+
+
+
+
+[source,bash]
+----
+ps2pdf -dPDFSETTINGS=/prepress  sPAPERSIZE=a5 foo.ps foo.pdf
+----
+
+
+*Update* : There's an other another way that gives much better results regarding the compression ratio of the picture in the PDF, see link:http://userstories.blogspot.com/2007/11/convert-image-to-high-quality-pdf-redux.html[Convert an image to high quality PDF, Redux]

@@ -1,0 +1,27 @@
+= Mix RJ45 and coaxial (10Base-2) ethernet cables
+
+Problem : how do you add a WIFI AP (Access Point) to an already existing network wired with 10Base-2 coaxial ethernet cables ?
+
+
+
+Of course this is an old network with old PC, and you can not replace the 10Base-2 network adapters of the PC in order to rewire with RJ45 cables.
+
+
+
+Answer : just find one more 10Base-2 network adapter in a drawer, and add it in an old Linux box that already has a RJ45 network adapter. 
+
+
+
+Setup two subnetworks, one on each adapter of the Linux box, with routing of the traffic from one subnetwork, to another (or even better, build a bridge, in order to have one single subnetwork).
+
+
+
+Plug in the AP to the linux box with a crossover RJ45 ethernet cable.
+
+
+
+This linux box can even be used as a gateway both for the LAN and for the WLAN !
+
+
+
+image::http://4.bp.blogspot.com/_Jvq2hRnIVmc/RuvdaB72_CI/AAAAAAAAAAM/Yp3YKcC98DE/s320/coax.JPG[]

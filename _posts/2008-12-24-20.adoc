@@ -1,0 +1,88 @@
+= Checked exception : why the debat is not over for everyone
+
+I've just read link:http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882[Clean Code] by Bob Martin.
+
+
+
+In this book uncle Bob says :
+
+_"The debate is over [...] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some benefit. However, it is clear now that they aren’t necessary for the production of robust software"_ 
+
+
+
+I do agree, but as I was reading these lines I was wondering why, for plenty of people, checked exception is still the way to go when writing a java app.
+
+
+
+Here is my humble hypothesis.
+
+
+
+First, I need two acronyms :
+
+
+
+
+
+* _SLJA_  : "Significantly Large JAVA Application". let's say a 500+ java classes application with at least two layers.
+
+
+* _BTDT_  : "Been There, Done That"
+
+
+
+
+So, in the checked vs unchecked exception debate I think that we may find at least 5 categories of contestant :
+
+
+
+
+
+
+
+* _Category 1_  : programmers who have never worked on any SLJA and just didn't experience what the real difficulties are with checked exceptions, so these programmers think that checked exceptions must be systematically used. BTDT (remember my second acronym ?)
+
+
+* _Category 2_  : programmers who have already worked on one or two SLJA and who also think that checked exceptions must be systematically used. Still they wonder why they need to use so many try/catch blocks and so many throws directives when the number of classes increases and the layers stack. The bigger the SLJA the more painful it becomes. BTDT.
+
+
+* _Category 3a_  : programmers who have aleady worked on some SLJA and who know that exception hierarchy in an application must be thoroughly designed in order to keep the verbosity of the try/catch/throws at a manageable level and to keep a coherence in the abstraction levels.They are sure that checked exception must be used, granted that a _MyApplicationException_  is used as the top most exception in the exception hierarchy of their application. They use _"throws MyApplicationException"_  in every methods, to please the compiler and allow most of their exceptions to bubble up. Most of their try/catch/finally became try/finally as they don't need to rethrow most exceptions anymore, thanks to the "throws MyApplicationException" directive in almost all methods signature. BTDT.
+
+
+* _Category 3b_  : programmers who have aleady worked on some SLJA and who are fed up with the _MyApplication_  exception trick. They understand that's only a symptom of the fact that in any SLJA most exceptions must bubble up and unchecked exceptions must be used instead of the _"throws MyApplicationException"_  everywhere. Still, they think that checked exceptions could be useful sometimes for the recoverable errors. BTDT.
+
+
+* _Category 3c_  : programmers who have aleady worked on some SLJA. They never use checked exceptions anymore. they have a few unchecked exceptions at the top most level of their exception hierarchy. They declare as many unchecked exceptions as necessary in the packages of the classes that might need to throw specific exceptions. As soon as they have to work with an API that throws checked exceptions, they wrap them with unchecked exceptions.
+
+
+
+
+So, actually, the debate is only over for category 3c (I consider that I'm in 3c now).
+
+
+
+It's interesting to understand how you move _from 3b to 3c_  (You're in 3b because you think that checked exception might sometimes be used for recoverable errors).
+
+
+
+Let's say you're in 3b and one day you have to design a factory method that parses a string for a credit card number and transform it into a CreditCardNumber object.
+
+
+
+The first client of this factory method is the GUI layer, so you think : "hey, the user may have made a mistake when entering the credit card number, it is a recoverable error because the GUI must warn him and retry, so I'm going to use a checked exception". So your factory method throws a BadCreditCardNumberException checked exception that inherit from a more general BadFormatException checked exception.
+
+
+
+Two weeks later you have to store the credit card number as a string into a database, and when you reread the record, you must transform the string back into a CreditCardNumber object. So you obviously reuse the factory method that was created. But now you have to catch the BadCreditCardNumber exception in your DAO, and you don't want to do that, because it is really not a recoverable error in this layer. It is a fatal error (data corruption ?) and you just want the application to bubble up and hit the fault barrier of your application as a BadFormatException.
+
+
+
+That's the exact moment you move from 3b to 3c because you see that an error that's recoverable in a layer may not be recoverable in an other layer and you really don't want to be forced to artificially chain a checked exception that is not recoverable. You prefer to choose to catch an unchecked exception when you think that it is recoverable for you in your layer.
+
+
+
+When you choose to use checked exception for errors that you think are recoverable, you try to decide for the client of you API, whereas only he may know what's recoverable and what isn't in his own context.
+
+
+
+Update : Everething was already link:http://www.artima.com/intv/handcuffs.html[there]

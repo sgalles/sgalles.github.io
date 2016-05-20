@@ -1,0 +1,51 @@
+= Manages Linux devices with HAL
+
+HAL, the link:http://www.freedesktop.org/wiki/Software/hal[Hardware Abstraction Layer] of most recent Linux distros really is an impressive piece of architecture.
+
+
+
+I'm impressed by how easy it is to take control of any low level parameter of any hardware.
+
+
+
+Two example I've recently used :
+
+
+
+A workaround to prevent nautilus in Ubuntu 9.04 from automatically mounting my MTP player :
+
+I've added a no-automount.fdi file in directory /etc/hal/fdi/policy
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- SGML -*- -->
+<deviceinfo version="0.2">
+ <device>
+  <match key="info.product" string="ZEN V Plus">
+    <remove key="info.capabilities" type="strlist">portable_audio_player</remove>
+  </match>
+ </device>
+</deviceinfo>
+
+----
+(See my answer "stephg said on 2009-11-09" in link:https://answers.launchpad.net/ubuntu/+question/69910[this post] for more details)
+
+
+
+An other example to slow down the cursor speed of my high resolution mouse. As the xorg configuration file is not used anymore in Ubuntu, the X11 options can be set with a HAL configuration file. 
+
+I've added a 10-x11-input.fdi file in directory /etc/hal/fdi/policy : 
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- SGML -*- -->
+<deviceinfo version="0.2">
+ <device>
+  <match key="info.product" string="Logitech USB Laser Mouse">
+    <merge key="input.x11_options.ConstantDeceleration" type="string">2</merge>
+  </match>
+ </device>
+</deviceinfo>
+
+----
+This "merge" scheme really is brilliant because it allows to go back to a default configuration by deleting a file.

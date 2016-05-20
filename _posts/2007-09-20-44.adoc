@@ -1,0 +1,3 @@
+= JAgraffe : quickly send your pictures by email
+
+I had coded link:http://stephane.galles.free.fr/jagraffe[JAgraffe] two years ago for my own use. I still use it almost on a weekly basis.

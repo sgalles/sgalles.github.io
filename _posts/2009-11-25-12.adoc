@@ -1,0 +1,3 @@
+= My "Hello World" Scala script
+
+My first Scala project, a simple Scala script to download podcasts and sync with an Mp3 player : link:http://github.com/sgalles/jonction[Jonction]

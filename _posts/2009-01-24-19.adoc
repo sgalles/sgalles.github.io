@@ -1,0 +1,11 @@
+= OOP vs Procedural : a definition
+
+In my opinion one of the best definition :
+
+
+
+_Procedural code gets information then makes decisions. Object-oriented code tells objects to do things._  Alec Sharp
+
+
+
+That's an explanation for the link:http://tech.groups.yahoo.com/group/testdrivendevelopment/message/29713[Tell, don't ask] advice for OOP.

@@ -1,0 +1,46 @@
+= MTP devices, udev and permissions in Ubuntu Dapper
+
+I had to install Gnomad2 in Ubuntu Dapper in order to upload files to my MTP Mp3 player.
+
+
+
+I followed this great link:http://ubuntuforums.org/showthread.php?t=199250[How To]
+
+
+
+However Gnomad2 could not open the device unless I was root (same thing for mtp-detect)
+
+
+
+It looked like a permission problem in /dev/bus/usb
+
+
+
+This worked for me :
+
+
+
+In /etc/udev/rules.d/40-permissions.rules I changed
+
+
+
+# USB devices (usbfs replacement)
+
+SUBSYSTEM=="usb_device", MODE="0664"
+
+to
+
+
+
+# USB devices (usbfs replacement)
+
+SUBSYSTEM=="usb_device", MODE="0664", GROUP="plugdev"
+
+
+
+Then
+
+
+
+sudo /etc/init.d/udev restart
+

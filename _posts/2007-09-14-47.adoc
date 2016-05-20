@@ -1,0 +1,33 @@
+= Simple iptable gateway script
+
+It's the second time I must setup a Linux gateway connected to a DSL line. The DSL modem interface is ppp0 and the LAN interface is eth0. Here is the script I use to setup the iptables :
+
+
+
+
+
+[source,bash]
+----
+echo "1" > /proc/sys/net/ipv4/ip_forward
+
+modprobe ip_conntrack_ftp
+
+export EXT=ppp0
+
+/sbin/iptables -F
+/sbin/iptables -t nat -F
+/sbin/iptables -t mangle -F 
+/sbin/iptables -X 
+
+/sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+/sbin/iptables -A INPUT -m state --state NEW -i ! $EXT -j ACCEPT
+/sbin/iptables -P INPUT DROP
+
+/sbin/iptables -A FORWARD -i $EXT -o eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+/sbin/iptables -A FORWARD -i eth0 -o $EXT -j ACCEPT
+
+/sbin/iptables -t nat -A POSTROUTING -o $EXT -j MASQUERADE
+
+/sbin/iptables -A FORWARD -i $EXT -o $EXT -j REJECT
+
+----

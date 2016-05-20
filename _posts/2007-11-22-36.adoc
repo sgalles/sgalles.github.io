@@ -1,0 +1,34 @@
+= Convert an image to high quality PDF, Redux
+
+In a previous post I explained how to link:http://userstories.blogspot.com/2007/11/convert-image-to-pdf-with-gimp.html[Convert an image to PDF with Gimp], but the quality of the picture in the PDF turned out to be rather poor for printing purpose.
+
+
+
+So here is an other way, install _tiff2pdf_ .
+
+On Ubuntu for instance :
+
+
+
+[source,bash]
+----
+sudo apt-get install libtiff-tools
+----
+Then save your image as a tiff image, then use _tiff2pdf_  to convert it to a PDF. For example, for an A4 sized PDF :
+
+
+
+[source,bash]
+----
+tiff2pdf -p A4  -o foo.pdf foo.tiff
+----
+
+
+For a multiple pages PDF, preprocess your TIFF files with _tiffcp_ 
+
+
+
+[source,bash]
+----
+tiffcp foo1.tiff foo2.tiff foo3.tiff totalfoo.tiff
+----

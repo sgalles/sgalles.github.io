@@ -1,0 +1,33 @@
+= TDD : Can Shared Fixture test unexpected statefulness ?
+
+When praticing TDD, the impact of the different types of fixture that can be used to setup the tests must be known in order to avoid to create link:http://xunitpatterns.com/Obscure%20Test.html[Obscure Tests]
+
+
+
+The usual default fixture type is the link:http://xunitpatterns.com/Fresh%20Fixture.html[Fresh Fixture]
+
+
+
+When the fresh fixture takes too much time a link:http://xunitpatterns.com/Shared%20Fixture.html[Shared Fixture] can be used. Now, that being said, the shared fixture should usually be avoided (there's a risk of link:http://xunitpatterns.com/Erratic%20Test.html[Erratic Test])
+
+
+
+A few days ago, during a discussion about test fixture, some colleagues of mine and I were wondering if shared fixture could be used in order to test the statelessness of the objects used in the fixture as a side effect of the sharing.
+
+
+
+Here is the initial reasoning : when an object is supposed to be stateless, but is buggy and not actually stateless , the use of this object will lead to some failing test, since the state left by some tests will make some subsequent tests fail. The statelessness is tested "for free" with a lot of different combination. Actually, if the object happens to be stateful it is a case of link:http://xunitpatterns.com/Erratic%20Test.html#Interacting%20Tests[Interacting Tests] and the reason why some tests fail could be quite hard to find.
+
+
+
+I must admit that it may help to find some obscure statefulness interaction, but I do not really like this idea :
+
+
+
+* I fear link:http://xunitpatterns.com/Erratic%20Test.html#Interacting%20Tests[Interacting Tests] far more than a single bug, as link:http://xunitpatterns.com/Erratic%20Test.html#Interacting%20Tests[Interacting Tests] in a test suite is hell on earth,
+* A test is supposed to have link:http://blog.jayfields.com/2007/06/testing-one-assertion-per-test.html[One Assertion Per Test]. Or, at most a few assertions. In this case, the statefulness test is spread in the whole test class.
+Actually, the statefulness should be tested in its own test. Of course it means that only a few method call combination will be tested but it should be enough to prove the statelessness (or else it means that the code of the class under test must be refactored in order to make the stalessness explicit in the code structure)
+
+
+
+To try to use the side effect of the shared fixture to test statelessness may seem to be worthwhile at first, but it creates link:http://www.martinfowler.com/bliki/TechnicalDebt.html[Technical Debt]. And in this case I think that the financial interest of the debt is pretty high.

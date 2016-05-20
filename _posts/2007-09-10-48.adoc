@@ -1,0 +1,47 @@
+= Sort JPG images by EXIF date in Ruby
+
+Everybody now has a digital camera, and, during special events everybody takes plenty of pictures, and you end up with all these JPG images from different cameras. Each set of pictures tells the same story from the beginning, so it would be great to be able to reinterleave all of them in order to tell one single story. 
+
+
+
+That what the folllowing little Ruby script does, thanks to the libexif-ruby library. If you run it in a directory with JPG images, it will create a subdirectory and copy all images, renaming them, prefixing with the EXIF date set by the camera.
+
+
+
+First, install the libexif-ruby library. On Ubuntu you can type :
+
+
+
+[source,bash]
+----
+sudo apt-get install libexif-ruby
+
+----
+
+
+Then copy the following script in a ruby script file :
+
+
+
+[source,ruby]
+----
+#!/usr/bin/ruby
+
+require 'exif'
+require 'ostruct'
+require 'fileutils'
+include FileUtils::Verbose
+
+SUBDIR='exifsorted'
+
+files = Dir.glob('*.{JPG,jpg}').entries.map { |name| OpenStruct.new({"name"=>name, "date"=>Exif.new(name)['Date and Time'].gsub(/ |:/,'')})}
+if(File.exist?(SUBDIR))
+    puts("Error : #{SUBDIR} directory already exist, delete it")
+    exit(1)
+end
+mkdir SUBDIR
+files.each do |file|
+    cp(file.name,File.join(SUBDIR,file.date + '_' + file.name))
+end 
+
+----

@@ -1,0 +1,15 @@
+= MTP Mp3 players and Asus eee
+
+Works like a charm :
+
+
+
+Open a console : CTRL+ALT+T then
+
+sudo apt-get install libmtp libnjb gnomad2
+
+./gnomad2
+
+
+
+Does not work with Amarok though, as the MTP support does not seem to be compiled in the version provided with the eee.

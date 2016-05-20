@@ -1,0 +1,49 @@
+= Usual GnuPG commands
+
+I tend to forget these very usual GnGPG commands as I use them only once in while. Now I won't forget them, or at least I'll known how to quickly find them :
+
+
+
+Sign a file :
+
+
+
+[source,bash]
+----
+gpg --detach-sign --armor myfile.tar.gz
+
+----
+
+
+Encrypt and decrypt a file for my own use :
+
+
+
+[source,bash]
+----
+gpg --encrypt --recipient 'MyName' foo.txt
+gpg --output foo.txt --decrypt foo.txt.gpg
+
+----
+
+
+Encrypt a free text for someone :
+
+
+
+[source,bash]
+----
+echo 'Hello world' | gpg --output encrypted_hello.txt --encrypt --armor -r myfriend@whatever.com
+
+----
+
+
+Get my own fingerprint :
+
+
+
+[source,bash]
+----
+gpg  --fingerprint  myaddress@whatever.com
+
+----

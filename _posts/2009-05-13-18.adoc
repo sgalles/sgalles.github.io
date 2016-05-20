@@ -1,0 +1,91 @@
+= OPML import for Rhythmbox, kind of
+
+_*Update* : it seems that Rhythmbox now has support for OPML import, you may type the path to the OPML import in the new feed dialog box. I didn't try it, though_ 
+
+
+
+I've just installed the brand new Ubuntu 9.04 to replace my good old 6.06, and now I must find a way to import all my podcast feeds exported in opml format from Juice, to Rhythmbox, the official Ubuntu music manager.
+
+
+
+However, it seems that Rhythmbox does not manage opml imports. I don't feel like copying manually 70 rss feeds...
+
+
+
+An opportunity to learn the XML library of Groovy !
+
+
+
+Save this groovy script as opml2rhythmbox.groovy
+
+
+
+[source,ruby]
+----
+#!/usr/bin/groovy
+
+if(args.size() != 1){
+    println("Usage : opml2rhythmbox.groovy myfile.opml")
+    System.exit 1
+}
+
+File opmlFile = new File(args[0])
+def opml = new XmlSlurper().parse(opmlFile)
+
+def builder = new groovy.xml.MarkupBuilder()
+opml.body.depthFirst().findAll { it.@type == "rss"}.each { rss ->
+    builder.entry(type:'podcast-feed') {
+ title rss.@title.text()
+        location rss.@xmlUrl.text()
+        status '1'
+    } 
+}
+
+----
+
+
+Then if it is not already done, install Groovy
+
+
+
+[source,bash]
+----
+sudo apt-get install groovy
+
+----
+
+
+Execute the script on your exported opml file
+
+
+
+[source,bash]
+----
+chmod +x opml2rhythmbox.groovy
+./opml2rhythmbox.groovy exported.opml > generated.xml
+
+----
+
+
+Now, you must manually copy the content of the generated generated.xml file, into the ~/local/share/rhythmbox/rhythmdb.xml db file of Rhythmbox (make a backup of the rhythmdb.xml file before !)
+
+
+
+The generated file content must be inserted after the rhythmdb opening tag at the begining of the rhythmdb.xml file
+
+
+
+[source,xml]
+----
+<?xml version="1.0" standalone="yes"?>
+<rhythmdb version="1.6">
+<!-- Insert here  -->
+
+----
+
+
+Then start Rhythmbox and run "Update all Feeds"
+
+
+
+You're done !

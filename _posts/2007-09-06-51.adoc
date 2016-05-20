@@ -1,0 +1,60 @@
+= Nautilus File Manager scripts : Scale JPG images
+
+I really appreciate the feature of Nautilus (Gnome file manager) that allows the use of custom scripts via the right click contextual menu. To be seen by Nautilus, the scripts must be copied in a specific directory ; you can reach this directory with :
+
+_Right clic in any directory window --> Scripts --> Open Scripts Folder_ 
+
+
+
+For example here is a bash script that can be used to scale all JPG images in a directory (a directory is created and the scaled images are copied into this directory). 
+
+
+
+You must install link:http://xdialog.dyns.net/[XDialog] and link:http://www.imagemagick.org/script/index.php[ImageMagick] to be able to use this script.
+
+On Ubuntu :
+
+
+
+[source,bash]
+----
+sudo apt-get install xdialog
+sudo apt-get install imagemagick
+
+----
+
+
+
+
+Then copy the script in the script directory of nautilus :
+
+
+
+
+
+[source,bash]
+----
+#!/bin/sh
+
+CURRENTDIR=`pwd`
+
+SIZE=`Xdialog --stdout --title "Image Scaling" --radiolist "Scaling images in \n$CURRENTDIR\npick a size !" 0 0 0 640 "640 pixels" 0 800 "800 pixels" 0 1024 "1024 pixels" 0 1920 "1920 pixels" 0 2>&1`
+
+if [ "$?" = "1" ] ; then
+    exit 0
+fi
+
+TARGET="R"$SIZE
+mkdir $TARGET
+
+for j in '*.jpg' '*.JPG' ;do
+    for f in $j ;do
+        convert -quality 88 -geometry $SIZE "$f" $TARGET/"${TARGET}_$f"
+    done
+done
+
+Xdialog --title "Image Scaling" --msgbox "Image scaling done in :\n"$CURRENTDIR/$TARGET 0 0
+
+exit 0
+
+----

@@ -1,0 +1,11 @@
+= Java Posse Podcast #314 all about Scala
+
+Once again, plenty of interesting things, this time link:http://javaposse.com/java_posse_314_roundup_10_scala[all about Scala] (not about Java)
+
+
+
+During the podcast several people said that it was a very bad idea to try to learn Scala using link:http://liftweb.net/[Lift] as a training material because it is way too functional for a beginner (in the link:http://en.wikipedia.org/wiki/Functional_programming[functional programming] acception of the term)
+
+
+
+Well, maybe I should try Lift now, to check if I begin to understand functional programming in general, and in especialy in Scala.

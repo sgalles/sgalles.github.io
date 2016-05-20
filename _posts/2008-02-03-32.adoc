@@ -1,0 +1,15 @@
+= TDD : How I was overusing mocks
+
+The path to TDD is hard. When you think that you begin to understand how to apply it, you read this great link:http://blog.jayfields.com/2008/01/testing-one-expectation-per-test.html[Jay Fields post], and you understand that you missed the point about stubs...
+
+
+
+As explained in his post, I was overusing mocks. I knew that I had to improve a lot in my way of using mocks, but what I really had to do was to use fewer mocks and more stubs. Basically I was missing the point that stubs are still of great use and are not superseded by mocks.
+
+
+
+It's been a long time since I learned such an important thing in a post about TDD. Now I'm really going to try to stick to "one assert per test" (including "one mock assert per test")
+
+
+
+And trying to do that, I'm also going to try "one test class per test setup". See this link:http://video.google.fr/url?docid=8135690990081075324&esrc=sr1&ev=v&len=2861&q=bdd&srcurl=http%3A%2F%2Fvideo.google.fr%2Fvideoplay%3Fdocid%3D8135690990081075324&vidurl=%2Fvideoplay%3Fdocid%3D8135690990081075324%26q%3Dbdd%26total%3D535%26start%3D0%26num%3D10%26so%3D0%26type%3Dsearch%26plindex%3D0&usg=AL29H229TyQhHRBiOgjNcReKfHnSF5p6Ew[presentation about BDD] by Dave Astels

@@ -1,0 +1,43 @@
+= TDD : state-based testings VS behavior-base testing
+
+Using TDD to write my code I'm still trying to find when I should use mock objects or just test against the whole cluster of objects. That's the difference between state-based testing (no mocks) and behavior-based testing (using mocks) explained in this brilliant article by Martin Fowler : link:http://martinfowler.com/articles/mocksArentStubs.html[Mocks Aren't Stubs]
+
+
+
+I'm sure that both technics are useful and I switch from one technic to an other depending on the complexity of the objects I'm testing.
+
+
+
+
+
+* State-based testing (no mock) tend to increase the amount of integration test between objects, so is better suited to tests clusters of object with complex interaction
+
+
+* Behaviour-based testing (with mocks) tend to increase the test coverage on a given object as it is easier to control the test environment of the object under test
+
+
+
+
+Using mocks objects tend to create more work, but the more I use them the more I detect bugs in my code that would very hard, or impossible to detect with state-based testing.
+
+
+
+Last time it happened it allowed me to see that an external object was called and was not supposed to be called (because the mock was called and warned me that it was an unexpected call)
+
+
+
+I would have never been able to detect this call with state base testing because :
+
+
+
+
+
+* It did not change the state of the object under test
+
+
+* It did not change the state of the external object
+
+
+
+
+However the call to the real external object is very CPU intensive and would have harmed the performance. Behavior based testing allowed me to see this, it would have been undetected with state-based testing.

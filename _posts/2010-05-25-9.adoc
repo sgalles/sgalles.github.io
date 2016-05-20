@@ -1,0 +1,11 @@
+= Checked exceptions : really, the debat is not over
+
+Whao, I knew that link:http://userstories.blogspot.com/2008/12/checked-exception-why-debat-is-not-over.html[it was not over], but I did not suspect how much.
+
+
+
+And even though I disagree with the conclusion of his article, we can be thankful to Elliotte Rusty Harold for having provided us with link:http://cafe.elharo.com/programming/bruce-eckel-is-wrong/[a thorough thread of discussion about checked vs unchecked exception].
+
+
+
+(By the way, did I mentioned that I did not like checked exceptions ?)

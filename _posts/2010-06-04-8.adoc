@@ -1,0 +1,12 @@
+= Writing zippy Android apps Google IO Video
+
+A Must-see presentation for development on Android : link:http://code.google.com/intl/fr/events/io/2010/sessions/writing-zippy-android-apps.html[Writing zippy Android apps]
+
+
+
+I really liked the part where Brad Fitzpatrick explains what the difference is between an AsyncTask and IntentService :
+
+
+
+* link:http://developer.android.com/reference/android/os/AsyncTask.html[AsyncTask] : for non blocking "fire and forget" operations outside of the UI Thread (the OS may kill the AsyncTask upon certain conditions and the task may not be able to finish its job)
+* link:http://developer.android.com/reference/android/app/IntentService.html[IntentService] : use for non blocking operations that must not be interrupted outside of the UI Thread

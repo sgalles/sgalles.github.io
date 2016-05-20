@@ -1,0 +1,31 @@
+= Asus eee and FullerScreen for Firefox
+
+The link:http://eeepc.asus.com/global/[Asus eee PC] is a terrific machine. Now, the screen resolution being what it is you must find ways to use as much as possible the available area in Firefox.
+
+
+
+Enters link:https://addons.mozilla.org/fr/firefox/addon/4650[FullerScreen] an extension for Firefox. After the install, F11 gives you a real fullscreen (even for a tab)
+
+
+
+In full screen mode, you may need the following shorcuts of Firefox :
+
+
+
+
+
+* Ctr + T : open tab
+
+
+* Ctrl + W : close tab
+
+
+* Ctrl + Tab : next tab (yeah, I know)
+
+
+* Ctrl + L : go to location dialog
+
+
+* Ctrl + K : go to search page
+
+

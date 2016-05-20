@@ -1,0 +1,43 @@
+= Unusual Git usage : temporary commit into a local SVN checkout
+
+I really love link:http://git.or.cz/[Git], the distributed source code management designed by Linus Torvald. It is VERY easy to setup a new local repository (just type _git init_  in the root of your working directory). I do it all the time, even for a simple bash script creation. Even for the simple text files I use as TODO lists.
+
+
+
+A few days ago, I add to work offline in an old SVN checkout. I wish I could have used link:http://www.kernel.org/pub/software/scm/git/docs/git-svn.html[git-svn] but it was an old checkout, and I was offline now. So much for git-svn for now...
+
+
+
+I had to find something to be able to undo my changes while I was offline. So why not try Git in a local SVN checkout ? After all, the only thing that Git does is to create a .git file, it does not modify the local files if I don't want to.
+
+
+
+So, at the root of my SVN checkout directory :
+
+_git init_ 
+
+Then, I must hide the _.svn_  metadata directory, so I modify _.git/info/exclude_  and I add the line _:
+
+.svn_ 
+
+
+
+Now Git will ignore the .svn directories and I can type :
+
+_git add ._ 
+
+_git commit_ 
+
+
+
+Now at least I can regularly commit my changes into Git and go back in time if
+
+I badly break my unit tests during my TDD session. Of course when I'll be back online
+
+and I'll commit into the SVN repository I'll lose the commit history in Git, but as I
+
+was offline anyway, at least I could work with a safety net.
+
+
+
+Even used in this unusual way, Git is still useful.

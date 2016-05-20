@@ -1,0 +1,3 @@
+= TDD and tomatoes
+
+_Tomatoes are like tests, it is easier to make a tomato go from green to red, than from red to green._ 

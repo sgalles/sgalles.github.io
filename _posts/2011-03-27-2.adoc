@@ -1,0 +1,7 @@
+= Tapestry conversion to Gradle
+
+One more high profile open source project link:http://tapestryjava.blogspot.com/2011/03/combining-gradle-with-antlr3.html[migrating] from Maven to Gradle.
+
+
+
+Experience of link:http://userstories.blogspot.com/2010/07/hibernate-build-infrastructure.html[Déjà vu] ?

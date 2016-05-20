@@ -1,0 +1,43 @@
+= Test Driven Wall Tiling
+
+Last week I was tiling a kitchen backsplash and countertop and as I was using the usual tile alignment tricks, I was struck by the parallel with the Test-driven development techniques for application development.
+
+
+
+This picture shows the wooden cleat (the dark brown area on the picture) that was temporarily screwed to the wall to obtain a perfect alignment for the second row of tiles above the countertop.
+
+
+
+image::http://3.bp.blogspot.com/_Jvq2hRnIVmc/SosiQ3c-VCI/AAAAAAAAACk/PpuacHOa2Rw/s320/Photo006.jpg[]
+It made me think of TDD because :
+
+
+
+* The screwed wooden cleat is a temporary built artifact that has nothing to do with what we want to construct (that's to say, a tiled backsplash), but we built it nonetheless, and with care, as it's going to direct the alignment of the tile. That's what we do with unit test, they are a programs designed to unit test other programs.
+
+
+* The wooden cleat is attached to the wall using the same tools and technique that are used to build the main "noble" artifacts (wood, screw, you name it). A unit test is build with the same skills than the tested program.
+
+
+* When the cleat is fixed we do not have to think anymore about the tile alignment. The alignment is forced by the wooden rule, we can forget about it and concentrate on the quality of the tiling. The unit test creates design or behavior constraints on the code that is written. You can then forget about these constraints (you'll get a red test anyway if you don't respect these constraints)
+
+
+* The wooden cleat is set at the beginning of the tiling for the row, you do not verify the alignment at the end. Test first
+
+
+* Nobody told you to screw a wooden cleat on the wall. Its an act of craftsmanship. We do it because we think that it will improve the quality of the tiling. You have to write unit tests, even when nobody tells you to do so.
+
+
+* Sometimes, it is not perfectly clear where the tiling must start, so you just set the tiles on the countertop without adhesive, and then you know where the wooden cleat must be fixed. Can be seen as exploratory testing.
+* I need the second row to be perfectly aligned since the first row above the contertop can not be aligned on the countertop itself (tiles thickness may vary). When parts of a system have good unit tests, the integration of these parts is easier.
+
+
+So why do we still see large software systems that are written without any sort of unit tests whereas this seems to be a widespread technique for building physical artifacts (tiling, walls, etc...) ?
+
+
+
+I think it is because programming is like tiling without adhesive. You may always be able to move the tiles. But even though we may try to align all the tiles at the end of the project, we would not completely succeed, and the quality of the alignment would suffer.
+
+
+
+We should rather use all the available engineering techniques during the life of the project in order to be sure that the alignment is perfect, all the time. From start to end.

@@ -1,0 +1,11 @@
+= EasyMock and methods with side effects
+
+I really like EasyMock, but was disappointed to not see any explanation in the documention about how to simulate the modification of an argument of a method with side effects.
+
+
+
+I thought that maybe I could write a custom argument matcher that modifies the argument (even if it seems weird to implement a side effect on the _matches_  method of the _IArgumentMatcher_ )
+
+
+
+Actually, it was confirmed by this brilliant article about a link:http://www.carbonfive.com/community/archives/2007/05/generic_custom.html[Generic Custom Argument Matching in EasyMock]

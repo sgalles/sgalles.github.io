@@ -1,0 +1,23 @@
+= TDD, red-green-refactor : red as important as green
+
+When I got started with link:http://www.agiledata.org/essays/tdd.html[TDD,] I tended to often forget the first step : _red_ 
+
+
+
+At first, it can seem silly to try to run a test when you did not write the matching functional code. You may think _"Of course, it is going to be red ! There's nothing in my application for this feature !"_ 
+
+
+
+Of course... Unless there's a bug in your test. And it could be green and you're not going to see it. Then, you write the application code, with a bug too, you run your buggy test, and it is green even with your buggy functional code...
+
+
+
+Basically the red step of red-green-refactor helps you debug your test before your code. The red step really is some sort of TDD applied to the test itself. When there is no functional code, a test must be red. It does not mean that the test is correct, but if it is green, surely, it must be fixed.
+
+
+
+And even if your test is red and buggy, it is not a big deal, because when your functional code will be written, the test will be red too. The problem could come from your functional code, from your test, or both, but at least you will have to fix something to make the test pass.
+
+
+
+TDD like all Agile techniques, is all about rapid feedback. Red gives you feedback about your test, green feedback about your functional code.
