@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>&quot;Unit Integrated Tests&quot; for integrator objects - </title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="&quot;Unit Integrated Tests&quot; for integrator objects">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="&quot;Unit Integrated Tests&quot; for integrator objects">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//sgalles.github.io/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://sgalles.github.io/2008/02/23/Unit-Integrated-Tests-for-integrator-objects.html" />
+    
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="&quot;Unit Integrated Tests&quot; for integrator objects" />
+    <meta property="og:description" content="Whether I use interaction based testing or state based testing I usually write &quot;real&quot; unit tests in the sense that only one real object is involved (the SUT, System Under Test) and only stubs and mocks are used for the..." />
+    <meta property="og:url" content="https://sgalles.github.io/2008/02/23/Unit-Integrated-Tests-for-integrator-objects.html" />
+    <meta property="article:published_time" content="2008-02-22T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-05-21T05:20:27.571Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="&quot;Unit Integrated Tests&quot; for integrator objects" />
+    <meta name="twitter:description" content="Whether I use interaction based testing or state based testing I usually write &quot;real&quot; unit tests in the sense that only one real object is involved (the SUT, System Under Test) and only stubs and mocks are used for the..." />
+    <meta name="twitter:url" content="https://sgalles.github.io/2008/02/23/Unit-Integrated-Tests-for-integrator-objects.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "",
+    "author": {
+        "@type": "Person",
+        "name": "Stephane Gallès",
+        "image": "https://avatars.githubusercontent.com/u/153065?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "https://plus.google.com/108710960409593252381"
+    },
+    "headline": "&quot;Unit Integrated Tests&quot; for integrator objects",
+    "url": "https://sgalles.github.io/2008/02/23/Unit-Integrated-Tests-for-integrator-objects.html",
+    "datePublished": "2008-02-22T23:00:00.000Z",
+    "dateModified": "2016-05-21T05:20:27.571Z",
+    "description": "Whether I use interaction based testing or state based testing I usually write &quot;real&quot; unit tests in the sense that only one real object is involved (the SUT, System Under Test) and only stubs and mocks are used for the..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://sgalles.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " >
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="https://sgalles.github.io" title="link to homepage for "></a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description"></p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="https://sgalles.github.io/#blog" title="link to  blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="23 Feb 2008" class="post-meta__date date">23 Feb 2008</time> &#8226; <span class="post-meta__tags tags"></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/153065?v=3" alt="profile image for Stephane Gallès" class="avatar post-meta__avatar" /> by Stephane Gallès</span>
+      </div>
+      <h1 class="post-title">&quot;Unit Integrated Tests&quot; for integrator objects</h1>
+    </header>
+
+    <section class="post">
+      <div class="paragraph">
+<p>Whether I use interaction based testing or state based testing I usually write "real" unit tests in the sense that only one real object is involved (the SUT, System Under Test) and only stubs and mocks are used for the fixture. It usually is the only way to easily get a good code coverage (or at least to easily specifically cover some parts of the code )</p>
+</div>
+<div class="paragraph">
+<p>However, Lately, when testing Facade or Adapter objects he seemed to me that the unit tests for these objects were :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>too complicated</p>
+</li>
+<li>
+<p>too&#8230;&#8203;useless</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For most Facade or Adapter objects :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>They&#8217;re stateless, so let&#8217;s forget state based testing, we must use mocks</p>
+</li>
+<li>
+<p>They&#8217;re highly coupled to the contract of the adapted objects (by definition of a Facade or of an Adapter)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This kind of class does nothing clever, they basically chain one or multiples calls. They may have bug though if they do not respect the contracts of the adapted classes.</p>
+</div>
+<div class="paragraph">
+<p>So a unit test for this kind of class depends more on the contract of the mocked objects, than on the behavior of the class under test. A very clear test smell.</p>
+</div>
+<div class="paragraph">
+<p>Even worse, the fixtures for the mocks are going to closely mimick the code of the SUT (if a method of a Facade calls an object A and then an object B, the fixture for the test on mocks and stubs will tell the exact same thing).</p>
+</div>
+<div class="paragraph">
+<p>In this specific case the unit test does not provide an orthogonal view of the behavior implemented by the code (the usual value of a unit test) ; it is the exact same view. If I make a wrong assumption on the contract of the adapted objects, I&#8217;m going to make the same exact mistake both in the test and then in the code (TDDly speaking)</p>
+</div>
+<div class="paragraph">
+<p>The problem basically is that the job of this kind of objects is to integrate other objects in the system. So he seemed to me that it is very hard to try to test an integration behavior in isolation.</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s why, now, when I must deal with objects that heavily depend on the contract of the collaborating objects but do not do anything complicated, "integrator objects", I use integrated tests.</p>
+</div>
+<div class="paragraph">
+<p>However when I encounter an object that heavily depend on the contract of the collaborating objects and does many complicated things, it just means that it is too hard to test, I refactor.</p>
+</div>
+    </section>
+
+  </article>
+
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2016. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//sgalles.github.io/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+
+</body>
+</html>
