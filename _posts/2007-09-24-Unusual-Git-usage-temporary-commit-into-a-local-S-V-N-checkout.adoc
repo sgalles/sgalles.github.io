@@ -14,19 +14,19 @@ I had to find something to be able to undo my changes while I was offline. So wh
 
 So, at the root of my SVN checkout directory :
 
-_git init_ 
+`git init` 
 
 Then, I must hide the _.svn_  metadata directory, so I modify _.git/info/exclude_  and I add the line _:
 
-.svn_ 
+`.svn`
 
 
 
 Now Git will ignore the .svn directories and I can type :
 
-_git add ._ 
+`git add .` 
 
-_git commit_ 
+`git commit`
 
 
 
