@@ -32,9 +32,9 @@ rsync -avb  --backup-dir=$OLDBDIR --modify-window=2 $SRCDIR $DESTDIR
 
 
 
-* links actually is a symlink to the directory that contains foo1 and foo2. I created this symlink with the ln -s command as the path to the parent directory of foo1 and foo2 had spaces and I didn't want to deal with path escaping issues.
-* --modify-window=2 is necessary on windows, else the whole set of file is saved all the time.
-* --delete can be added to the rsync command if we want the deleted files to be removed from the backup
+* `links` actually is a symlink to the directory that contains foo1 and foo2. I created this symlink with the ln -s command as the path to the parent directory of foo1 and foo2 had spaces and I didn't want to deal with path escaping issues.
+* `--modify-window=2` is necessary on windows, else the whole set of file is saved all the time.
+* `--delete` can be added to the rsync command if we want the deleted files to be removed from the backup
 
 
 Then a .bat file is created in order to run the script with a double click :
