@@ -20,27 +20,29 @@ This worked for me :
 
 
 
-In /etc/udev/rules.d/40-permissions.rules I changed
+In `/etc/udev/rules.d/40-permissions.rules` I changed
 
 
-
+----
 # USB devices (usbfs replacement)
 
 SUBSYSTEM=="usb_device", MODE="0664"
+----
 
 to
 
 
-
+----
 # USB devices (usbfs replacement)
 
 SUBSYSTEM=="usb_device", MODE="0664", GROUP="plugdev"
-
+----
 
 
 Then
 
 
-
+----
 sudo /etc/init.d/udev restart
+----
 
