@@ -7,19 +7,22 @@ Works for me with Linux Mint 12.
 The tutorials I found explain the part where we must add
 
 
+----
+Enable=Source
+----
 
-_Enable=Source_ 
-
-in /etc/bluetooth/audio.conf
+in `/etc/bluetooth/audio.conf`
 
 
 
-but I had a hard time to figure out that I had to modify /etc/pulse/default.pa and add
+but I had a hard time to figure out that I had to modify `/etc/pulse/default.pa` and add
 
-_load-module module-switch-on-connect_ 
 
-_load-module module-loopback_ 
+----
+load-module module-switch-on-connect
 
+load-module module-loopback 
+----
 
 
 else the sink/source are not automatically connected.
