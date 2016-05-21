@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Checked exception : why the debat is not over for everyone - </title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Checked exception : why the debat is not over for everyone">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Checked exception : why the debat is not over for everyone">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//sgalles.github.io/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html" />
+    
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Checked exception : why the debat is not over for everyone" />
+    <meta property="og:description" content="I&amp;#8217;ve just read Clean Code by Bob Martin. In this book uncle Bob says : &quot;The debate is over [&amp;#8230;&amp;#8203;] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some..." />
+    <meta property="og:url" content="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html" />
+    <meta property="article:published_time" content="2008-12-23T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-05-21T05:30:40.488Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Checked exception : why the debat is not over for everyone" />
+    <meta name="twitter:description" content="I&amp;#8217;ve just read Clean Code by Bob Martin. In this book uncle Bob says : &quot;The debate is over [&amp;#8230;&amp;#8203;] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some..." />
+    <meta name="twitter:url" content="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "",
+    "author": {
+        "@type": "Person",
+        "name": "Stephane Gallès",
+        "image": "https://avatars.githubusercontent.com/u/153065?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "https://plus.google.com/108710960409593252381"
+    },
+    "headline": "Checked exception : why the debat is not over for everyone",
+    "url": "https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html",
+    "datePublished": "2008-12-23T23:00:00.000Z",
+    "dateModified": "2016-05-21T05:30:40.488Z",
+    "description": "I&amp;#8217;ve just read Clean Code by Bob Martin. In this book uncle Bob says : &quot;The debate is over [&amp;#8230;&amp;#8203;] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://sgalles.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " >
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="https://sgalles.github.io" title="link to homepage for "></a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description"></p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="https://sgalles.github.io/#blog" title="link to  blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="24 Dec 2008" class="post-meta__date date">24 Dec 2008</time> &#8226; <span class="post-meta__tags tags"></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/153065?v=3" alt="profile image for Stephane Gallès" class="avatar post-meta__avatar" /> by Stephane Gallès</span>
+      </div>
+      <h1 class="post-title">Checked exception : why the debat is not over for everyone</h1>
+    </header>
+
+    <section class="post">
+      <div class="paragraph">
+<p>I&#8217;ve just read <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a> by Bob Martin.</p>
+</div>
+<div class="paragraph">
+<p>In this book uncle Bob says :</p>
+</div>
+<div class="paragraph">
+<p><em>"The debate is over [&#8230;&#8203;] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some benefit. However, it is clear now that they aren’t necessary for the production of robust software"</em></p>
+</div>
+<div class="paragraph">
+<p>I do agree, but as I was reading these lines I was wondering why, for plenty of people, checked exception is still the way to go when writing a java app.</p>
+</div>
+<div class="paragraph">
+<p>Here is my humble hypothesis.</p>
+</div>
+<div class="paragraph">
+<p>First, I need two acronyms :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>SLJA</em>  : "Significantly Large JAVA Application". let&#8217;s say a 500+ java classes application with at least two layers.</p>
+</li>
+<li>
+<p><em>BTDT</em>  : "Been There, Done That"</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So, in the checked vs unchecked exception debate I think that we may find at least 5 categories of contestant :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Category 1</em>  : programmers who have never worked on any SLJA and just didn&#8217;t experience what the real difficulties are with checked exceptions, so these programmers think that checked exceptions must be systematically used. BTDT (remember my second acronym ?)</p>
+</li>
+<li>
+<p><em>Category 2</em>  : programmers who have already worked on one or two SLJA and who also think that checked exceptions must be systematically used. Still they wonder why they need to use so many try/catch blocks and so many throws directives when the number of classes increases and the layers stack. The bigger the SLJA the more painful it becomes. BTDT.</p>
+</li>
+<li>
+<p><em>Category 3a</em>  : programmers who have aleady worked on some SLJA and who know that exception hierarchy in an application must be thoroughly designed in order to keep the verbosity of the try/catch/throws at a manageable level and to keep a coherence in the abstraction levels.They are sure that checked exception must be used, granted that a <em>MyApplicationException</em>  is used as the top most exception in the exception hierarchy of their application. They use <em>"throws MyApplicationException"</em>  in every methods, to please the compiler and allow most of their exceptions to bubble up. Most of their try/catch/finally became try/finally as they don&#8217;t need to rethrow most exceptions anymore, thanks to the "throws MyApplicationException" directive in almost all methods signature. BTDT.</p>
+</li>
+<li>
+<p><em>Category 3b</em>  : programmers who have aleady worked on some SLJA and who are fed up with the <em>MyApplication</em>  exception trick. They understand that&#8217;s only a symptom of the fact that in any SLJA most exceptions must bubble up and unchecked exceptions must be used instead of the <em>"throws MyApplicationException"</em>  everywhere. Still, they think that checked exceptions could be useful sometimes for the recoverable errors. BTDT.</p>
+</li>
+<li>
+<p><em>Category 3c</em>  : programmers who have aleady worked on some SLJA. They never use checked exceptions anymore. they have a few unchecked exceptions at the top most level of their exception hierarchy. They declare as many unchecked exceptions as necessary in the packages of the classes that might need to throw specific exceptions. As soon as they have to work with an API that throws checked exceptions, they wrap them with unchecked exceptions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So, actually, the debate is only over for category 3c (I consider that I&#8217;m in 3c now).</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s interesting to understand how you move <em>from 3b to 3c</em>  (You&#8217;re in 3b because you think that checked exception might sometimes be used for recoverable errors).</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say you&#8217;re in 3b and one day you have to design a factory method that parses a string for a credit card number and transform it into a CreditCardNumber object.</p>
+</div>
+<div class="paragraph">
+<p>The first client of this factory method is the GUI layer, so you think : "hey, the user may have made a mistake when entering the credit card number, it is a recoverable error because the GUI must warn him and retry, so I&#8217;m going to use a checked exception". So your factory method throws a BadCreditCardNumberException checked exception that inherit from a more general BadFormatException checked exception.</p>
+</div>
+<div class="paragraph">
+<p>Two weeks later you have to store the credit card number as a string into a database, and when you reread the record, you must transform the string back into a CreditCardNumber object. So you obviously reuse the factory method that was created. But now you have to catch the BadCreditCardNumber exception in your DAO, and you don&#8217;t want to do that, because it is really not a recoverable error in this layer. It is a fatal error (data corruption ?) and you just want the application to bubble up and hit the fault barrier of your application as a BadFormatException.</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s the exact moment you move from 3b to 3c because you see that an error that&#8217;s recoverable in a layer may not be recoverable in an other layer and you really don&#8217;t want to be forced to artificially chain a checked exception that is not recoverable. You prefer to choose to catch an unchecked exception when you think that it is recoverable for you in your layer.</p>
+</div>
+<div class="paragraph">
+<p>When you choose to use checked exception for errors that you think are recoverable, you try to decide for the client of you API, whereas only he may know what&#8217;s recoverable and what isn&#8217;t in his own context.</p>
+</div>
+<div class="paragraph">
+<p>Update : Everething was already <a href="http://www.artima.com/intv/handcuffs.html">there</a></p>
+</div>
+    </section>
+
+  </article>
+
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2016. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//sgalles.github.io/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+
+</body>
+</html>
