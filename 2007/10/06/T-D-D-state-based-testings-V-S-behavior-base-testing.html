@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>TDD : state-based testings VS behavior-base testing - </title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TDD : state-based testings VS behavior-base testing">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="TDD : state-based testings VS behavior-base testing">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//sgalles.github.io/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://sgalles.github.io/2007/10/06/T-D-D-state-based-testings-V-S-behavior-base-testing.html" />
+    
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="TDD : state-based testings VS behavior-base testing" />
+    <meta property="og:description" content="Using TDD to write my code I&amp;#8217;m still trying to find when I should use mock objects or just test against the whole cluster of objects. That&amp;#8217;s the difference between state-based testing (no mocks) and behavior-based..." />
+    <meta property="og:url" content="https://sgalles.github.io/2007/10/06/T-D-D-state-based-testings-V-S-behavior-base-testing.html" />
+    <meta property="article:published_time" content="2007-10-05T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-05-21T05:14:09.066Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="TDD : state-based testings VS behavior-base testing" />
+    <meta name="twitter:description" content="Using TDD to write my code I&amp;#8217;m still trying to find when I should use mock objects or just test against the whole cluster of objects. That&amp;#8217;s the difference between state-based testing (no mocks) and behavior-based..." />
+    <meta name="twitter:url" content="https://sgalles.github.io/2007/10/06/T-D-D-state-based-testings-V-S-behavior-base-testing.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "",
+    "author": {
+        "@type": "Person",
+        "name": "Stephane Gallès",
+        "image": "https://avatars.githubusercontent.com/u/153065?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "https://plus.google.com/108710960409593252381"
+    },
+    "headline": "TDD : state-based testings VS behavior-base testing",
+    "url": "https://sgalles.github.io/2007/10/06/T-D-D-state-based-testings-V-S-behavior-base-testing.html",
+    "datePublished": "2007-10-05T22:00:00.000Z",
+    "dateModified": "2016-05-21T05:14:09.066Z",
+    "description": "Using TDD to write my code I&amp;#8217;m still trying to find when I should use mock objects or just test against the whole cluster of objects. That&amp;#8217;s the difference between state-based testing (no mocks) and behavior-based..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://sgalles.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " >
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="https://sgalles.github.io" title="link to homepage for "></a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description"></p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="https://sgalles.github.io/#blog" title="link to  blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="06 Oct 2007" class="post-meta__date date">06 Oct 2007</time> &#8226; <span class="post-meta__tags tags"></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/153065?v=3" alt="profile image for Stephane Gallès" class="avatar post-meta__avatar" /> by Stephane Gallès</span>
+      </div>
+      <h1 class="post-title">TDD : state-based testings VS behavior-base testing</h1>
+    </header>
+
+    <section class="post">
+      <div class="paragraph">
+<p>Using TDD to write my code I&#8217;m still trying to find when I should use mock objects or just test against the whole cluster of objects. That&#8217;s the difference between state-based testing (no mocks) and behavior-based testing (using mocks) explained in this brilliant article by Martin Fowler : <a href="http://martinfowler.com/articles/mocksArentStubs.html">Mocks Aren&#8217;t Stubs</a></p>
+</div>
+<div class="paragraph">
+<p>I&#8217;m sure that both technics are useful and I switch from one technic to an other depending on the complexity of the objects I&#8217;m testing.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>State-based testing (no mock) tend to increase the amount of integration test between objects, so is better suited to tests clusters of object with complex interaction</p>
+</li>
+<li>
+<p>Behaviour-based testing (with mocks) tend to increase the test coverage on a given object as it is easier to control the test environment of the object under test</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using mocks objects tend to create more work, but the more I use them the more I detect bugs in my code that would very hard, or impossible to detect with state-based testing.</p>
+</div>
+<div class="paragraph">
+<p>Last time it happened it allowed me to see that an external object was called and was not supposed to be called (because the mock was called and warned me that it was an unexpected call)</p>
+</div>
+<div class="paragraph">
+<p>I would have never been able to detect this call with state base testing because :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It did not change the state of the object under test</p>
+</li>
+<li>
+<p>It did not change the state of the external object</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However the call to the real external object is very CPU intensive and would have harmed the performance. Behavior based testing allowed me to see this, it would have been undetected with state-based testing.</p>
+</div>
+    </section>
+
+  </article>
+
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2016. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//sgalles.github.io/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+
+</body>
+</html>
