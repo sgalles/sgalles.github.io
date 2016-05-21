@@ -6,7 +6,7 @@ I've just read link:http://www.amazon.com/Clean-Code-Handbook-Software-Craftsman
 
 In this book uncle Bob says :
 
-_"The debate is over [...] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some benefit. However, it is clear now that they aren’t necessary for the production of robust software"_ 
+_"The debate is over [...] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some benefit. However, it is clear now that they arenâ€™t necessary for the production of robust software"_ 
 
 
 
