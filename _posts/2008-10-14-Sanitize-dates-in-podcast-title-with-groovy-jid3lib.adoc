@@ -22,7 +22,7 @@ So here is a quick and dirty script _sanitize_dates.groovy_  :
 
 
 
-[source,ruby]
+[source,groovy]
 ----
 import org.farng.mp3.*
 
