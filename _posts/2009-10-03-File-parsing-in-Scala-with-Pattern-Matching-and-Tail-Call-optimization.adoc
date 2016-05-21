@@ -64,7 +64,7 @@ So here is the part of the code that parses the mtp-tracks output :
 
 
 
-[source,ruby]
+[source,scala]
 ----
 //let's define some RegExp
 Expval TrackId = """Track ID: ([0-9]+)""".r
@@ -100,13 +100,13 @@ In this code, four matchers are defined for four regexp : TrackId, Title, Album 
 So, now, the description of the three cases after lines match
 
 
-caseTrackId(id) :: Title(title) :: _ :: _:: Album(album) :: Filename(filename) :: rest
+`caseTrackId(id) :: Title(title) :: _ :: _:: Album(album) :: Filename(filename) :: rest`
 
  this one says "match on list if list first element matches the regexp TrackId, then regexp Title, then whatever twice, then regexp Album, then regexp Filename. And also, if it matches extract the rest of the list in the rest variable. Also, capture all regexp groups in the declared variables id,title,album and filename". Rather powerfull.
 
 Then, with the matched information we create an MtpTrack object that is added to tracks, the already collected list of MtpTrack (actually a new list is created as a List in Scala is immutable).
 
-case _ :: rest
+`case _ :: rest`
 
 this one is tried when the previous case does not match. It says "if list starts with any element, extract the rest of the list after this element in a rest variable". rest may also by empty.case Nil
 
