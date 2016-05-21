@@ -96,17 +96,20 @@ To explain the three pattern matching cases of the collect function, I must firs
 In this code, four matchers are defined for four regexp : TrackId, Title, Album and Filename. For instance, if one line matches on the expression Track(id) the first group of the regexp is captures in the id variable.
 
 
-
 So, now, the description of the three cases after lines match
 
+----
+caseTrackId(id) :: Title(title) :: _ :: _:: Album(album) :: Filename(filename) :: rest
+----
 
-`caseTrackId(id) :: Title(title) :: _ :: _:: Album(album) :: Filename(filename) :: rest`
 
- this one says "match on list if list first element matches the regexp TrackId, then regexp Title, then whatever twice, then regexp Album, then regexp Filename. And also, if it matches extract the rest of the list in the rest variable. Also, capture all regexp groups in the declared variables id,title,album and filename". Rather powerfull.
+this one says "match on list if list first element matches the regexp TrackId, then regexp Title, then whatever twice, then regexp Album, then regexp Filename. And also, if it matches extract the rest of the list in the rest variable. Also, capture all regexp groups in the declared variables id,title,album and filename". Rather powerfull.
 
 Then, with the matched information we create an MtpTrack object that is added to tracks, the already collected list of MtpTrack (actually a new list is created as a List in Scala is immutable).
 
-`case _ :: rest`
+----
+case _ :: rest
+----
 
 this one is tried when the previous case does not match. It says "if list starts with any element, extract the rest of the list after this element in a rest variable". rest may also by empty.case Nil
 
