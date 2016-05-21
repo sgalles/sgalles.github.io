@@ -6,10 +6,14 @@ My MTP MP3 player does not allow to delete all albums with one command (yes I re
 
 Bash to the rescue :
 
+----
 mtp-tracks | grep 'Track ID' | awk '{print $3}' | xargs mtp-delfile -n
+----
 
 
 
 Of course you must install the mtp-tools, on Ubuntu :
 
+----
 sudo apt-get install mtp-tools
+----
