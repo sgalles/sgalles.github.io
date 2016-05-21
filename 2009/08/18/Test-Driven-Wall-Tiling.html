@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Test Driven Wall Tiling - </title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Test Driven Wall Tiling">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Test Driven Wall Tiling">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//sgalles.github.io/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html" />
+    
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Test Driven Wall Tiling" />
+    <meta property="og:description" content="Last week I was tiling a kitchen backsplash and countertop and as I was using the usual tile alignment tricks, I was struck by the parallel with the Test-driven development techniques for application development. This picture shows the wooden cleat..." />
+    <meta property="og:url" content="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html" />
+    <meta property="article:published_time" content="2009-08-17T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-05-21T05:34:26.921Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Test Driven Wall Tiling" />
+    <meta name="twitter:description" content="Last week I was tiling a kitchen backsplash and countertop and as I was using the usual tile alignment tricks, I was struck by the parallel with the Test-driven development techniques for application development. This picture shows the wooden cleat..." />
+    <meta name="twitter:url" content="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "",
+    "author": {
+        "@type": "Person",
+        "name": "Stephane Gallès",
+        "image": "https://avatars.githubusercontent.com/u/153065?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "https://plus.google.com/108710960409593252381"
+    },
+    "headline": "Test Driven Wall Tiling",
+    "url": "https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html",
+    "datePublished": "2009-08-17T22:00:00.000Z",
+    "dateModified": "2016-05-21T05:34:26.921Z",
+    "description": "Last week I was tiling a kitchen backsplash and countertop and as I was using the usual tile alignment tricks, I was struck by the parallel with the Test-driven development techniques for application development. This picture shows the wooden cleat..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://sgalles.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " >
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="https://sgalles.github.io" title="link to homepage for "></a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description"></p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="https://sgalles.github.io/#blog" title="link to  blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="18 Aug 2009" class="post-meta__date date">18 Aug 2009</time> &#8226; <span class="post-meta__tags tags"></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/153065?v=3" alt="profile image for Stephane Gallès" class="avatar post-meta__avatar" /> by Stephane Gallès</span>
+      </div>
+      <h1 class="post-title">Test Driven Wall Tiling</h1>
+    </header>
+
+    <section class="post">
+      <div class="paragraph">
+<p>Last week I was tiling a kitchen backsplash and countertop and as I was using the usual tile alignment tricks, I was struck by the parallel with the Test-driven development techniques for application development.</p>
+</div>
+<div class="paragraph">
+<p>This picture shows the wooden cleat (the dark brown area on the picture) that was temporarily screwed to the wall to obtain a perfect alignment for the second row of tiles above the countertop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://3.bp.blogspot.com/_Jvq2hRnIVmc/SosiQ3c-VCI/AAAAAAAAACk/PpuacHOa2Rw/s320/Photo006.jpg" alt="Photo006.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>It made me think of TDD because :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The screwed wooden cleat is a temporary built artifact that has nothing to do with what we want to construct (that&#8217;s to say, a tiled backsplash), but we built it nonetheless, and with care, as it&#8217;s going to direct the alignment of the tile. That&#8217;s what we do with unit test, they are a programs designed to unit test other programs.</p>
+</li>
+<li>
+<p>The wooden cleat is attached to the wall using the same tools and technique that are used to build the main "noble" artifacts (wood, screw, you name it). A unit test is build with the same skills than the tested program.</p>
+</li>
+<li>
+<p>When the cleat is fixed we do not have to think anymore about the tile alignment. The alignment is forced by the wooden rule, we can forget about it and concentrate on the quality of the tiling. The unit test creates design or behavior constraints on the code that is written. You can then forget about these constraints (you&#8217;ll get a red test anyway if you don&#8217;t respect these constraints)</p>
+</li>
+<li>
+<p>The wooden cleat is set at the beginning of the tiling for the row, you do not verify the alignment at the end. Test first</p>
+</li>
+<li>
+<p>Nobody told you to screw a wooden cleat on the wall. Its an act of craftsmanship. We do it because we think that it will improve the quality of the tiling. You have to write unit tests, even when nobody tells you to do so.</p>
+</li>
+<li>
+<p>Sometimes, it is not perfectly clear where the tiling must start, so you just set the tiles on the countertop without adhesive, and then you know where the wooden cleat must be fixed. Can be seen as exploratory testing.</p>
+</li>
+<li>
+<p>I need the second row to be perfectly aligned since the first row above the contertop can not be aligned on the countertop itself (tiles thickness may vary). When parts of a system have good unit tests, the integration of these parts is easier.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So why do we still see large software systems that are written without any sort of unit tests whereas this seems to be a widespread technique for building physical artifacts (tiling, walls, etc&#8230;&#8203;) ?</p>
+</div>
+<div class="paragraph">
+<p>I think it is because programming is like tiling without adhesive. You may always be able to move the tiles. But even though we may try to align all the tiles at the end of the project, we would not completely succeed, and the quality of the alignment would suffer.</p>
+</div>
+<div class="paragraph">
+<p>We should rather use all the available engineering techniques during the life of the project in order to be sure that the alignment is perfect, all the time. From start to end.</p>
+</div>
+    </section>
+
+  </article>
+
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2016. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//sgalles.github.io/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+
+</body>
+</html>
