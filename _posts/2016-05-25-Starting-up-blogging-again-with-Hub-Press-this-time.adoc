@@ -1,6 +1,6 @@
 = Starting up blogging again, with HubPress this time
 
-My initial link:http://userstories.blogspot.fr/[old blog] was created using Blogger. I have sparsely posted on this blog over the last few years, essentially because I didn't want to invest too much time on it, but also because I missed a more effective tool that would make the writing of tech blog post a much more pleasant experience.
+My initial link:http://userstories.blogspot.fr/[old blog] was created using Blogger. I have sparsely posted on this blog over the last few years, essentially because I didn't want to invest too much time on it, but also because I missed a more effective tool that would make the writing of tech blog post a more pleasant experience.
 
 So, this is my first post using link:http://hubpress.io/[HubPress] and it definitely is a very effective, lightweight, tool.
 
