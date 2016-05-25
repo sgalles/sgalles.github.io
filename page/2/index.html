@@ -1,76 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>void   techBlog()   { //... }</title>
+    <meta name="description" content="My attemps to arrange 0 and 1 and make something vaguely useful" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="My attemps to arrange 0 and 1 and make something vaguely useful">
+    <link rel="shortcut icon" href="//sgalles.github.io/themes/Roon/favicon.ico">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="void   techBlog()   { //... }">
-    <meta name="twitter:description" content="My attemps to arrange 0 and 1 and make something vaguely useful">
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="void   techBlog()   { //... }">
-    <meta property="og:description" content="My attemps to arrange 0 and 1 and make something vaguely useful">
-
-    <!-- <meta name="twitter:site" content="">
-
-<meta name="twitter:creator" content="">
-
-<meta name="google-site-verification" content="">
-
-<meta property="fb:admins" content="">
- -->
-
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
-
-    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
-    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
-
-    <link rel="stylesheet" href="//sgalles.github.io/themes/ghostium/assets/css/main.min.css?v=1.0.0"/>
-    <link rel="stylesheet" href="//sgalles.github.io/themes/ghostium/assets/css/custom.css?v=1.0.0"/>
-    <link rel="stylesheet" href="//sgalles.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1.0.0"/>
-
-
-
-
-    <script type="text/javascript">
-      var ga_ua = 'UA-XXXXX-X';
-      
-      var disqus_shortname = 'example';
-      
-      var enable_pjax = true;
-
-      // Pace Options
-      // ==============
-      window.paceOptions = {
-        catchupTime: 100,
-        minTime: 100,
-        elements: false,
-        restartOnRequestAfter: 500,
-        startOnPageLoad: false
-      }
-
-      // Ghostium Globals
-      // ==============
-      window.GHOSTIUM = {};
-      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
-      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
-      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
-    </script>
-
-    <script src="//sgalles.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1.0.0"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//sgalles.github.io/themes/Roon/assets/css/screen.css?v=1.0.0" />
 
     <link rel="canonical" href="https://sgalles.github.io" />
     <link rel="prev" href="https://sgalles.github.io/" />
@@ -78,347 +21,240 @@
     <meta name="generator" content="Ghost ?" />
     <link rel="alternate" type="application/rss+xml" title="void   techBlog()   { //... }" href="https://sgalles.github.io/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
-  </head>
-  <body class="home-template">
+</head>
+<body class="home-template user ">
 
-    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
-    <nav tabindex="-1" class="drawer">
-      <div class="drawer-container">
-        <!--.drawer-search(role="search")-->
-        <ul role="navigation" class="drawer-list">
-          
-          <li class="drawer-list-item">
-            <a href="https://sgalles.github.io" data-pjax>
-              <i class="fa fa-home"></i>Home
-            </a>
-          </li>
-          <!-- <li class="drawer-list-item">
-            <a href="https://sgalles.github.io" title="void   techBlog()   { //... }" data-pjax>
-              <i class="fa fa-list-alt"></i>All posts
-            </a>
-          </li> -->
-          <!--
-          <li class="drawer-list-item">
-            <a href="https://sgalles.github.io/rss/">
-              <i class="fa fa-rss"></i>Subscribe to Feed
-            </a>
-          </li>
-          -->
-          <li class="drawer-list-divider"></li>
-          <li class="drawer-list-item drawer-list-title">
-            Follow me
-          </li>
-          
-          
-          <li class="drawer-list-item">
-            <a href="https://github.com/sgalles" title="Github" target="_blank">
-              <i class="fa fa-github"></i>Github
-            </a>
-          </li>
-          <li class="drawer-list-item">
-            <a href="https://plus.google.com/108710960409593252381" title="Google+" target="_blank">
-              <i class="fa fa-google-plus"></i>Google+
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    
+<header role="banner">
+    <div class="wrap">
+        <h1><a href="https://sgalles.github.io">void   techBlog()   { //... }</a></h1>
+        <hr>
+    </div>
+</header>
 
-    <div class="drawer-overlay"></div>
-    <main id="container" role="main" class="container">
-      <div class="surface">
-        <div class="surface-container">
-          <div data-pjax-container class="content">
-            
-<aside role="banner" class="cover">
-  <div data-load-image="https://raw.githubusercontent.com/sgalles/sgalles.github.io/master/images/avril2005%20033.jpg" class="cover-image"></div>
-  <div class="cover-container">
-    <h1 class="cover-title"><a href="https://sgalles.github.io" title="void   techBlog()   { //... }">void   techBlog()   { //... }</a></h1>
-    <p class="cover-description">My attemps to arrange 0 and 1 and make something vaguely useful</p>
-  </div>
-</aside>
 
-<section class="wrapper" tabindex="0">
-  <div class="wrapper-container">
-    void   techBlog()   { //... }
+<article class="post ">
 
-    <section class="post-list">
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/10/06/Cloned-Git-repository-in-Drop-Box-folder.html" itemprop="url" data-pjax title="Cloned Git repository in DropBox folder">
-                Cloned Git repository in DropBox folder
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>Nice and easy way to setup a Git server : a cloned git repository in a DropBox folder. This is brilliant and It works very well (see the Collaboration part of the article).&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-10-06" itemprop="datePublished">
-                  2009-10-06 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/10/06/Cloned-Git-repository-in-Drop-Box-folder.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/10/03/File-parsing-in-Scala-with-Pattern-Matching-and-Tail-Call-optimization.html" itemprop="url" data-pjax title="File parsing in Scala with Pattern Matching and Tail-Call optimization">
-                File parsing in Scala with Pattern Matching and Tail-Call optimization
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>In the process of learning Scala, I had to find a subject for my very first "Non Hello World" program in Scala. It was a good opportunity to code a script I wanted to write&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-10-03" itemprop="datePublished">
-                  2009-10-03 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/10/03/File-parsing-in-Scala-with-Pattern-Matching-and-Tail-Call-optimization.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/08/30/Backup-with-rsync-and-cygwin-on-Windows.html" itemprop="url" data-pjax title="Backup with rsync and cygwin on Windows">
-                Backup with rsync and cygwin on Windows
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>I recently had to setup an automatic backup scheme for a desktop Windows PC used for office tasks. I usually try to avoid complicated backup software that tend to store the backups in a proprietary&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-08-30" itemprop="datePublished">
-                  2009-08-30 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/08/30/Backup-with-rsync-and-cygwin-on-Windows.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html" itemprop="url" data-pjax title="Test Driven Wall Tiling">
-                Test Driven Wall Tiling
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>Last week I was tiling a kitchen backsplash and countertop and as I was using the usual tile alignment tricks, I was struck by the parallel with the Test-driven development techniques for application development. This&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-08-18" itemprop="datePublished">
-                  2009-08-18 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/05/13/O-P-M-L-import-for-Rhythmbox-kind-of.html" itemprop="url" data-pjax title="OPML import for Rhythmbox, kind of">
-                OPML import for Rhythmbox, kind of
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>*Update* : it seems that Rhythmbox now has support for OPML import, you may type the path to the OPML import in the new feed dialog box. I didn&#8217;t try it, though I&#8217;&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-05-13" itemprop="datePublished">
-                  2009-05-13 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/05/13/O-P-M-L-import-for-Rhythmbox-kind-of.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/01/24/O-O-P-vs-Procedural-a-definition.html" itemprop="url" data-pjax title="OOP vs Procedural : a definition">
-                OOP vs Procedural : a definition
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>In my opinion one of the best definition : Procedural code gets information then makes decisions. Object-oriented code tells objects to do things.  Alec Sharp That&#8217;s an explanation for the Tell, don&#8217;t&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-01-24" itemprop="datePublished">
-                  2009-01-24 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/01/24/O-O-P-vs-Procedural-a-definition.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html" itemprop="url" data-pjax title="Checked exception : why the debat is not over for everyone">
-                Checked exception : why the debat is not over for everyone
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>I&#8217;ve just read Clean Code by Bob Martin. In this book uncle Bob says : "The debate is over [&#8230;&#8203;] At the time, we thought that checked exceptions were a great idea; and&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2008-12-24" itemprop="datePublished">
-                  2008-12-24 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2008/12/23/How-to-negate-a-regexp-with-a-negative-lookahead.html" itemprop="url" data-pjax title="How to negate a regexp with a negative lookahead">
-                How to negate a regexp with a negative lookahead
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>When I need it, I tend to forget how to create a regular expression that matches a large set of strings but does not match some specific strings. It&#8217;s tricky because it involves&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2008-12-23" itemprop="datePublished">
-                  2008-12-23 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2008/12/23/How-to-negate-a-regexp-with-a-negative-lookahead.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2008/11/09/Sepia-G-F-A-Basic-code.html" itemprop="url" data-pjax title="Sepia GFA Basic code">
-                Sepia GFA Basic code
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>Internet is such a strange place. I&#8217;ve found by chance some lines of GFA Basic code I wrote something like 20 years ago. Actually in the late 80s the French magazine ST Mag&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2008-11-09" itemprop="datePublished">
-                  2008-11-09 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2008/11/09/Sepia-G-F-A-Basic-code.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2008/10/14/Sanitize-dates-in-podcast-title-with-groovy-jid3lib.html" itemprop="url" data-pjax title="Sanitize dates in podcast title with groovy + jid3lib">
-                Sanitize dates in podcast title with groovy + jid3lib
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>When I sort the podcasts I download by their ID3 titles, I want to see an older episode sorted after a newer episode. Here is a groovy script that modifies the MP3 title of an&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2008-10-14" itemprop="datePublished">
-                  2008-10-14 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2008/10/14/Sanitize-dates-in-podcast-title-with-groovy-jid3lib.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-    </section>
 
-      <nav role="pagination" class="post-list-pagination">
-    <a href="https://sgalles.github.io/" class="post-list-pagination-item post-list-pagination-item-prev" data-pjax>
-      <i class="fa fa-angle-double-left"></i>&nbsp;Newer
-    </a>
-  <span class="post-list-pagination-item post-list-pagination-item-current">Page 2 of 4</span>
-    <a href="https://sgalles.github.io/page/3/" class="post-list-pagination-item post-list-pagination-item-next" data-pjax>
-      Older&nbsp;<i class="fa fa-angle-double-right"></i>
-    </a>
+    <div class="meta">
+        <time datetime="2009-10-06"><a href="https://sgalles.github.io/2009/10/06/Cloned-Git-repository-in-Drop-Box-folder.html">October 06, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/10/06/Cloned-Git-repository-in-Drop-Box-folder.html">Cloned Git repository in DropBox folder</a></h1>
+    </header>
+
+    <div class="text">
+        <p>Nice and easy way to setup a Git server : a cloned git repository in a DropBox folder. This is brilliant and It works very well (see the Collaboration part of the article).</p>
+        <a href="https://sgalles.github.io/2009/10/06/Cloned-Git-repository-in-Drop-Box-folder.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-10-03"><a href="https://sgalles.github.io/2009/10/03/File-parsing-in-Scala-with-Pattern-Matching-and-Tail-Call-optimization.html">October 03, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/10/03/File-parsing-in-Scala-with-Pattern-Matching-and-Tail-Call-optimization.html">File parsing in Scala with Pattern Matching and Tail-Call optimization</a></h1>
+    </header>
+
+    <div class="text">
+        <p>In the process of learning Scala, I had to find a subject for my very first "Non Hello World" program in Scala. It was a good opportunity to code a script I wanted to write a long time ago in order to automatize the sync</p>
+        <a href="https://sgalles.github.io/2009/10/03/File-parsing-in-Scala-with-Pattern-Matching-and-Tail-Call-optimization.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-08-30"><a href="https://sgalles.github.io/2009/08/30/Backup-with-rsync-and-cygwin-on-Windows.html">August 30, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/08/30/Backup-with-rsync-and-cygwin-on-Windows.html">Backup with rsync and cygwin on Windows</a></h1>
+    </header>
+
+    <div class="text">
+        <p>I recently had to setup an automatic backup scheme for a desktop Windows PC used for office tasks. I usually try to avoid complicated backup software that tend to store the backups in a proprietary format. I want to be able to browse the files</p>
+        <a href="https://sgalles.github.io/2009/08/30/Backup-with-rsync-and-cygwin-on-Windows.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-08-18"><a href="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html">August 18, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html">Test Driven Wall Tiling</a></h1>
+    </header>
+
+    <div class="text">
+        <p>Last week I was tiling a kitchen backsplash and countertop and as I was using the usual tile alignment tricks, I was struck by the parallel with the Test-driven development techniques for application development. This picture shows the wooden cleat (the dark brown area on</p>
+        <a href="https://sgalles.github.io/2009/08/18/Test-Driven-Wall-Tiling.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-05-13"><a href="https://sgalles.github.io/2009/05/13/O-P-M-L-import-for-Rhythmbox-kind-of.html">May 13, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/05/13/O-P-M-L-import-for-Rhythmbox-kind-of.html">OPML import for Rhythmbox, kind of</a></h1>
+    </header>
+
+    <div class="text">
+        <p>*Update* : it seems that Rhythmbox now has support for OPML import, you may type the path to the OPML import in the new feed dialog box. I didn&#8217;t try it, though I&#8217;ve just installed the brand new Ubuntu 9.04 to</p>
+        <a href="https://sgalles.github.io/2009/05/13/O-P-M-L-import-for-Rhythmbox-kind-of.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-01-24"><a href="https://sgalles.github.io/2009/01/24/O-O-P-vs-Procedural-a-definition.html">January 24, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/01/24/O-O-P-vs-Procedural-a-definition.html">OOP vs Procedural : a definition</a></h1>
+    </header>
+
+    <div class="text">
+        <p>In my opinion one of the best definition : Procedural code gets information then makes decisions. Object-oriented code tells objects to do things.  Alec Sharp That&#8217;s an explanation for the Tell, don&#8217;t ask advice for OOP.</p>
+        <a href="https://sgalles.github.io/2009/01/24/O-O-P-vs-Procedural-a-definition.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2008-12-24"><a href="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html">December 24, 2008</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html">Checked exception : why the debat is not over for everyone</a></h1>
+    </header>
+
+    <div class="text">
+        <p>I&#8217;ve just read Clean Code by Bob Martin. In this book uncle Bob says : "The debate is over [&#8230;&#8203;] At the time, we thought that checked exceptions were a great idea; and yes, they can yield some benefit. However, it is clear</p>
+        <a href="https://sgalles.github.io/2008/12/24/Checked-exception-why-the-debat-is-not-over-for-everyone.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2008-12-23"><a href="https://sgalles.github.io/2008/12/23/How-to-negate-a-regexp-with-a-negative-lookahead.html">December 23, 2008</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2008/12/23/How-to-negate-a-regexp-with-a-negative-lookahead.html">How to negate a regexp with a negative lookahead</a></h1>
+    </header>
+
+    <div class="text">
+        <p>When I need it, I tend to forget how to create a regular expression that matches a large set of strings but does not match some specific strings. It&#8217;s tricky because it involves the negative lookahead syntax. For exemple the regexp .+\.java matches</p>
+        <a href="https://sgalles.github.io/2008/12/23/How-to-negate-a-regexp-with-a-negative-lookahead.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2008-11-09"><a href="https://sgalles.github.io/2008/11/09/Sepia-G-F-A-Basic-code.html">November 09, 2008</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2008/11/09/Sepia-G-F-A-Basic-code.html">Sepia GFA Basic code</a></h1>
+    </header>
+
+    <div class="text">
+        <p>Internet is such a strange place. I&#8217;ve found by chance some lines of GFA Basic code I wrote something like 20 years ago. Actually in the late 80s the French magazine ST Mag used to publish short GFA Basic programs written by the</p>
+        <a href="https://sgalles.github.io/2008/11/09/Sepia-G-F-A-Basic-code.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2008-10-14"><a href="https://sgalles.github.io/2008/10/14/Sanitize-dates-in-podcast-title-with-groovy-jid3lib.html">October 14, 2008</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2008/10/14/Sanitize-dates-in-podcast-title-with-groovy-jid3lib.html">Sanitize dates in podcast title with groovy + jid3lib</a></h1>
+    </header>
+
+    <div class="text">
+        <p>When I sort the podcasts I download by their ID3 titles, I want to see an older episode sorted after a newer episode. Here is a groovy script that modifies the MP3 title of an MP3 file passed as first parameter of the script, and</p>
+        <a href="https://sgalles.github.io/2008/10/14/Sanitize-dates-in-podcast-title-with-groovy-jid3lib.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<nav class="pagination" role="navigation">
+        <a class="newer-posts" href="https://sgalles.github.io/">&larr; Newer Posts</a>
+    <span class="page-number">Page 2 of 4</span>
+        <a class="older-posts" href="https://sgalles.github.io/page/3/">Older Posts &rarr;</a>
 </nav>
 
+<footer role="contentinfo">
+    <div class="inner">
+        <div class="vcard">
+            <!-- <a href="https://sgalles.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                <span aria-hidden="true" data-icon=")"></span>
+                <strong>Feed</strong>
+            </a> -->
 
-    <footer role="contentinfo" class="footer">
-      <p><small>Copyright &copy; <span itemprop="copyrightHolder">void   techBlog()   { //... }</span>. 2016. All Rights Reserved.</small></p>
-      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
-      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
-      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
-    </footer>
-  </div>
-</section>
 
-          </div>
+            <div class="details">
+                <h4><a href="https://sgalles.github.io" class="url n">void   techBlog()   { //... }</a></h4>
+                <a href="https://sgalles.github.io" class="js-remove-domain-schema">https://sgalles.github.io</a><br>
+                <span>Published with <a href="http://hubpress.io">HubPress</a></span>
+            </div>
         </div>
-      </div>
-    </main>
+        <div id="user_bio">
+            <div class="inner">
+                My attemps to arrange 0 and 1 and make something vaguely useful
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+        }
+    </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -433,8 +269,8 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-    <script src="//sgalles.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1.0.0"></script>
 
 
-  </body>
+
+</body>
 </html>
