@@ -1,420 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>void   techBlog()   { //... }</title>
+    <meta name="description" content="My attemps to arrange 0 and 1 and make something vaguely useful" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="My attemps to arrange 0 and 1 and make something vaguely useful">
+    <link rel="shortcut icon" href="//sgalles.github.io/themes/Roon/favicon.ico">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="void   techBlog()   { //... }">
-    <meta name="twitter:description" content="My attemps to arrange 0 and 1 and make something vaguely useful">
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="void   techBlog()   { //... }">
-    <meta property="og:description" content="My attemps to arrange 0 and 1 and make something vaguely useful">
-
-    <!-- <meta name="twitter:site" content="">
-
-<meta name="twitter:creator" content="">
-
-<meta name="google-site-verification" content="">
-
-<meta property="fb:admins" content="">
- -->
-
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
-
-    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
-    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
-
-    <link rel="stylesheet" href="//sgalles.github.io/themes/ghostium/assets/css/main.min.css?v=1.0.0"/>
-    <link rel="stylesheet" href="//sgalles.github.io/themes/ghostium/assets/css/custom.css?v=1.0.0"/>
-    <link rel="stylesheet" href="//sgalles.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1.0.0"/>
-
-
-
-
-    <script type="text/javascript">
-      var ga_ua = 'UA-XXXXX-X';
-      
-      var disqus_shortname = 'example';
-      
-      var enable_pjax = true;
-
-      // Pace Options
-      // ==============
-      window.paceOptions = {
-        catchupTime: 100,
-        minTime: 100,
-        elements: false,
-        restartOnRequestAfter: 500,
-        startOnPageLoad: false
-      }
-
-      // Ghostium Globals
-      // ==============
-      window.GHOSTIUM = {};
-      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
-      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
-      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
-    </script>
-
-    <script src="//sgalles.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1.0.0"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//sgalles.github.io/themes/Roon/assets/css/screen.css?v=1.0.0" />
 
     <link rel="canonical" href="https://sgalles.github.io" />
     <link rel="next" href="https://sgalles.github.io/page/2/" />
     <meta name="generator" content="Ghost ?" />
     <link rel="alternate" type="application/rss+xml" title="void   techBlog()   { //... }" href="https://sgalles.github.io/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
-  </head>
-  <body class="home-template">
+</head>
+<body class="home-template user ">
 
-    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
-    <nav tabindex="-1" class="drawer">
-      <div class="drawer-container">
-        <!--.drawer-search(role="search")-->
-        <ul role="navigation" class="drawer-list">
-          
-          <li class="drawer-list-item">
-            <a href="https://sgalles.github.io" data-pjax>
-              <i class="fa fa-home"></i>Home
-            </a>
-          </li>
-          <!-- <li class="drawer-list-item">
-            <a href="https://sgalles.github.io" title="void   techBlog()   { //... }" data-pjax>
-              <i class="fa fa-list-alt"></i>All posts
-            </a>
-          </li> -->
-          <!--
-          <li class="drawer-list-item">
-            <a href="https://sgalles.github.io/rss/">
-              <i class="fa fa-rss"></i>Subscribe to Feed
-            </a>
-          </li>
-          -->
-          <li class="drawer-list-divider"></li>
-          <li class="drawer-list-item drawer-list-title">
-            Follow me
-          </li>
-          
-          
-          <li class="drawer-list-item">
-            <a href="https://github.com/sgalles" title="Github" target="_blank">
-              <i class="fa fa-github"></i>Github
-            </a>
-          </li>
-          <li class="drawer-list-item">
-            <a href="https://plus.google.com/108710960409593252381" title="Google+" target="_blank">
-              <i class="fa fa-google-plus"></i>Google+
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    
+<header role="banner">
+    <div class="wrap">
+        <h1><a href="https://sgalles.github.io">void   techBlog()   { //... }</a></h1>
+        <hr>
+    </div>
+</header>
 
-    <div class="drawer-overlay"></div>
-    <main id="container" role="main" class="container">
-      <div class="surface">
-        <div class="surface-container">
-          <div data-pjax-container class="content">
-            
-<aside role="banner" class="cover">
-  <div data-load-image="https://raw.githubusercontent.com/sgalles/sgalles.github.io/master/images/avril2005%20033.jpg" class="cover-image"></div>
-  <div class="cover-container">
-    <h1 class="cover-title"><a href="https://sgalles.github.io" title="void   techBlog()   { //... }">void   techBlog()   { //... }</a></h1>
-    <p class="cover-description">My attemps to arrange 0 and 1 and make something vaguely useful</p>
-  </div>
-</aside>
 
-<section class="wrapper" tabindex="0">
-  <div class="wrapper-container">
-    void   techBlog()   { //... }
+<article class="post ">
 
-    <section class="post-list">
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2013/01/10/Fun-with-new-Ceylon-M5-syntax.html" itemprop="url" data-pjax title="Fun with new Ceylon M5 syntax">
-                Fun with new Ceylon M5 syntax
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>As a new dev version of the Ceylon Eclipse IDE was pushed, let&#8217;s play with the syntax [String,Number,Boolean,String] fooBarTuple = ["foo",1,true,"bar"]; // can be seen as a sequence with&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2013-01-10" itemprop="datePublished">
-                  2013-01-10 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2013/01/10/Fun-with-new-Ceylon-M5-syntax.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2012/12/03/An-old-P-C-used-as-an-A2-D-P-bluetooth-receiver.html" itemprop="url" data-pjax title="An old PC used as an A2DP bluetooth receiver">
-                An old PC used as an A2DP bluetooth receiver
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>Works for me with Linux Mint 12. The tutorials I found explain the part where we must add Enable=Source in /etc/bluetooth/audio.conf but I had a hard time to figure out that&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2012-12-03" itemprop="datePublished">
-                  2012-12-03 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2012/12/03/An-old-P-C-used-as-an-A2-D-P-bluetooth-receiver.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2010/12/30/Beyond-Red-Green-Refactor.html" itemprop="url" data-pjax title="Beyond Red/Green/Refactor">
-                Beyond Red/Green/Refactor
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>Michael Feathers' post Making Too Much Of TDD. A must read.&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2010-12-30" itemprop="datePublished">
-                  2010-12-30 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2010/12/30/Beyond-Red-Green-Refactor.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2010/07/12/Hibernate-build-infrastructure-switching-from-Maven-to-Gradle.html" itemprop="url" data-pjax title="Hibernate build infrastructure switching from Maven to Gradle">
-                Hibernate build infrastructure switching from Maven to Gradle
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>In the world of build tools this is big news : Steve Ebersole announced that he wanted to migrate from Maven to Gradle for the Hibernate project. A list of reasons is given for the switch&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2010-07-12" itemprop="datePublished">
-                  2010-07-12 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2010/07/12/Hibernate-build-infrastructure-switching-from-Maven-to-Gradle.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2010/06/19/Convert-M4-A-A-A-C-file-to-and-from-W-A-V-file-on-Linux.html" itemprop="url" data-pjax title="Convert M4A/AAC file to and from WAV file on Linux">
-                Convert M4A/AAC file to and from WAV file on Linux
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>May be useful to create M4A/ACC files for phone ringtones, use faad and faac command line utilities : faad foo.aac creates a foo.wav file faac foo.wav create a foo.acc file&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2010-06-19" itemprop="datePublished">
-                  2010-06-19 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2010/06/19/Convert-M4-A-A-A-C-file-to-and-from-W-A-V-file-on-Linux.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2010/06/04/Writing-zippy-Android-apps-Google-I-O-Video.html" itemprop="url" data-pjax title="Writing zippy Android apps Google IO Video">
-                Writing zippy Android apps Google IO Video
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>A Must-see presentation for development on Android : Writing zippy Android apps I really liked the part where Brad Fitzpatrick explains what the difference is between an AsyncTask and IntentService : AsyncTask : for non blocking "fire and&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2010-06-04" itemprop="datePublished">
-                  2010-06-04 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2010/06/04/Writing-zippy-Android-apps-Google-I-O-Video.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2010/05/25/Checked-exceptions-really-the-debat-is-not-over.html" itemprop="url" data-pjax title="Checked exceptions : really, the debat is not over">
-                Checked exceptions : really, the debat is not over
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>Whao, I knew that it was not over, but I did not suspect how much. And even though I disagree with the conclusion of his article, we can be thankful to Elliotte Rusty Harold for&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2010-05-25" itemprop="datePublished">
-                  2010-05-25 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2010/05/25/Checked-exceptions-really-the-debat-is-not-over.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/12/06/Manages-Linux-devices-with-H-A-L.html" itemprop="url" data-pjax title="Manages Linux devices with HAL">
-                Manages Linux devices with HAL
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>HAL, the Hardware Abstraction Layer of most recent Linux distros really is an impressive piece of architecture. I&#8217;m impressed by how easy it is to take control of any low level parameter of&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-12-06" itemprop="datePublished">
-                  2009-12-06 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/12/06/Manages-Linux-devices-with-H-A-L.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/11/25/My-Hello-World-Scala-script.html" itemprop="url" data-pjax title="My &quot;Hello World&quot; Scala script">
-                My &quot;Hello World&quot; Scala script
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>My first Scala project, a simple Scala script to download podcasts and sync with an Mp3 player : Jonction&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-11-25" itemprop="datePublished">
-                  2009-11-25 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/11/25/My-Hello-World-Scala-script.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-        <article itemscope itemtype="http://schema.org/BlogPosting"
-          role="article" class="post-item post">
-          <header class="post-item-header">
-            <h2 itemprop="name" class="post-item-title">
-              <a href="https://sgalles.github.io/2009/10/25/Delete-all-tracks-from-M-T-P-device.html" itemprop="url" data-pjax title="Delete all tracks from MTP device">
-                Delete all tracks from MTP device
-              </a>
-            </h2>
-          </header>
-          <section itemprop="description" class="post-item-excerpt">
-            <p>My MTP MP3 player does not allow to delete all albums with one command (yes I really wanted to delete all tracks ! ) Bash to the rescue : mtp-tracks | grep 'Track ID' | awk '{print $3}'&hellip;</p>
-          </section>
-          <footer class="post-item-footer">
-            <ul class="post-item-meta-list">
-              <li class="post-item-meta-item">
-                <time datetime="2009-10-25" itemprop="datePublished">
-                  2009-10-25 00:00:00<ago class="ago">
-                </time>
-              </li>
-              <li class="post-item-meta-item">
-                <a href="https://sgalles.github.io/2009/10/25/Delete-all-tracks-from-M-T-P-device.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-    </section>
 
-      <nav role="pagination" class="post-list-pagination">
-  <span class="post-list-pagination-item post-list-pagination-item-current">Page 1 of 4</span>
-    <a href="https://sgalles.github.io/page/2/" class="post-list-pagination-item post-list-pagination-item-next" data-pjax>
-      Older&nbsp;<i class="fa fa-angle-double-right"></i>
-    </a>
+    <div class="meta">
+        <time datetime="2013-01-10"><a href="https://sgalles.github.io/2013/01/10/Fun-with-new-Ceylon-M5-syntax.html">January 10, 2013</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2013/01/10/Fun-with-new-Ceylon-M5-syntax.html">Fun with new Ceylon M5 syntax</a></h1>
+    </header>
+
+    <div class="text">
+        <p>As a new dev version of the Ceylon Eclipse IDE was pushed, let&#8217;s play with the syntax [String,Number,Boolean,String] fooBarTuple = ["foo",1,true,"bar"]; // can be seen as a sequence with this syntax [Number|String|Boolean...] fooBarSequence = fooBarTuple; // or this alternate</p>
+        <a href="https://sgalles.github.io/2013/01/10/Fun-with-new-Ceylon-M5-syntax.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2012-12-03"><a href="https://sgalles.github.io/2012/12/03/An-old-P-C-used-as-an-A2-D-P-bluetooth-receiver.html">December 03, 2012</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2012/12/03/An-old-P-C-used-as-an-A2-D-P-bluetooth-receiver.html">An old PC used as an A2DP bluetooth receiver</a></h1>
+    </header>
+
+    <div class="text">
+        <p>Works for me with Linux Mint 12. The tutorials I found explain the part where we must add Enable=Source in /etc/bluetooth/audio.conf but I had a hard time to figure out that I had to modify /etc/pulse/default.pa and add</p>
+        <a href="https://sgalles.github.io/2012/12/03/An-old-P-C-used-as-an-A2-D-P-bluetooth-receiver.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2010-12-30"><a href="https://sgalles.github.io/2010/12/30/Beyond-Red-Green-Refactor.html">December 30, 2010</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2010/12/30/Beyond-Red-Green-Refactor.html">Beyond Red/Green/Refactor</a></h1>
+    </header>
+
+    <div class="text">
+        <p>Michael Feathers' post Making Too Much Of TDD. A must read.</p>
+        <a href="https://sgalles.github.io/2010/12/30/Beyond-Red-Green-Refactor.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2010-07-12"><a href="https://sgalles.github.io/2010/07/12/Hibernate-build-infrastructure-switching-from-Maven-to-Gradle.html">July 12, 2010</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2010/07/12/Hibernate-build-infrastructure-switching-from-Maven-to-Gradle.html">Hibernate build infrastructure switching from Maven to Gradle</a></h1>
+    </header>
+
+    <div class="text">
+        <p>In the world of build tools this is big news : Steve Ebersole announced that he wanted to migrate from Maven to Gradle for the Hibernate project. A list of reasons is given for the switch (and I utterly understand what they mean). Well, it is</p>
+        <a href="https://sgalles.github.io/2010/07/12/Hibernate-build-infrastructure-switching-from-Maven-to-Gradle.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2010-06-19"><a href="https://sgalles.github.io/2010/06/19/Convert-M4-A-A-A-C-file-to-and-from-W-A-V-file-on-Linux.html">June 19, 2010</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2010/06/19/Convert-M4-A-A-A-C-file-to-and-from-W-A-V-file-on-Linux.html">Convert M4A/AAC file to and from WAV file on Linux</a></h1>
+    </header>
+
+    <div class="text">
+        <p>May be useful to create M4A/ACC files for phone ringtones, use faad and faac command line utilities : faad foo.aac creates a foo.wav file faac foo.wav create a foo.acc file</p>
+        <a href="https://sgalles.github.io/2010/06/19/Convert-M4-A-A-A-C-file-to-and-from-W-A-V-file-on-Linux.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2010-06-04"><a href="https://sgalles.github.io/2010/06/04/Writing-zippy-Android-apps-Google-I-O-Video.html">June 04, 2010</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2010/06/04/Writing-zippy-Android-apps-Google-I-O-Video.html">Writing zippy Android apps Google IO Video</a></h1>
+    </header>
+
+    <div class="text">
+        <p>A Must-see presentation for development on Android : Writing zippy Android apps I really liked the part where Brad Fitzpatrick explains what the difference is between an AsyncTask and IntentService : AsyncTask : for non blocking "fire and forget" operations outside of the UI Thread (the OS may</p>
+        <a href="https://sgalles.github.io/2010/06/04/Writing-zippy-Android-apps-Google-I-O-Video.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2010-05-25"><a href="https://sgalles.github.io/2010/05/25/Checked-exceptions-really-the-debat-is-not-over.html">May 25, 2010</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2010/05/25/Checked-exceptions-really-the-debat-is-not-over.html">Checked exceptions : really, the debat is not over</a></h1>
+    </header>
+
+    <div class="text">
+        <p>Whao, I knew that it was not over, but I did not suspect how much. And even though I disagree with the conclusion of his article, we can be thankful to Elliotte Rusty Harold for having provided us with a thorough thread of discussion about</p>
+        <a href="https://sgalles.github.io/2010/05/25/Checked-exceptions-really-the-debat-is-not-over.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-12-06"><a href="https://sgalles.github.io/2009/12/06/Manages-Linux-devices-with-H-A-L.html">December 06, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/12/06/Manages-Linux-devices-with-H-A-L.html">Manages Linux devices with HAL</a></h1>
+    </header>
+
+    <div class="text">
+        <p>HAL, the Hardware Abstraction Layer of most recent Linux distros really is an impressive piece of architecture. I&#8217;m impressed by how easy it is to take control of any low level parameter of any hardware. Two example I&#8217;ve recently used : A</p>
+        <a href="https://sgalles.github.io/2009/12/06/Manages-Linux-devices-with-H-A-L.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-11-25"><a href="https://sgalles.github.io/2009/11/25/My-Hello-World-Scala-script.html">November 25, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/11/25/My-Hello-World-Scala-script.html">My &quot;Hello World&quot; Scala script</a></h1>
+    </header>
+
+    <div class="text">
+        <p>My first Scala project, a simple Scala script to download podcasts and sync with an Mp3 player : Jonction</p>
+        <a href="https://sgalles.github.io/2009/11/25/My-Hello-World-Scala-script.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2009-10-25"><a href="https://sgalles.github.io/2009/10/25/Delete-all-tracks-from-M-T-P-device.html">October 25, 2009</a></time>
+    </div>
+
+    <header>
+        <h1><a href="https://sgalles.github.io/2009/10/25/Delete-all-tracks-from-M-T-P-device.html">Delete all tracks from MTP device</a></h1>
+    </header>
+
+    <div class="text">
+        <p>My MTP MP3 player does not allow to delete all albums with one command (yes I really wanted to delete all tracks ! ) Bash to the rescue : mtp-tracks | grep 'Track ID' | awk '{print $3}' | xargs mtp-delfile -n Of course you must install the mtp-tools,</p>
+        <a href="https://sgalles.github.io/2009/10/25/Delete-all-tracks-from-M-T-P-device.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<nav class="pagination" role="navigation">
+    <span class="page-number">Page 1 of 4</span>
+        <a class="older-posts" href="https://sgalles.github.io/page/2/">Older Posts &rarr;</a>
 </nav>
 
+<footer role="contentinfo">
+    <div class="inner">
+        <div class="vcard">
+            <!-- <a href="https://sgalles.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                <span aria-hidden="true" data-icon=")"></span>
+                <strong>Feed</strong>
+            </a> -->
 
-    <footer role="contentinfo" class="footer">
-      <p><small>Copyright &copy; <span itemprop="copyrightHolder">void   techBlog()   { //... }</span>. 2016. All Rights Reserved.</small></p>
-      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
-      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
-      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
-    </footer>
-  </div>
-</section>
 
-          </div>
+            <div class="details">
+                <h4><a href="https://sgalles.github.io" class="url n">void   techBlog()   { //... }</a></h4>
+                <a href="https://sgalles.github.io" class="js-remove-domain-schema">https://sgalles.github.io</a><br>
+                <span>Published with <a href="http://hubpress.io">HubPress</a></span>
+            </div>
         </div>
-      </div>
-    </main>
+        <div id="user_bio">
+            <div class="inner">
+                My attemps to arrange 0 and 1 and make something vaguely useful
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+        }
+    </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -429,8 +267,8 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-    <script src="//sgalles.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1.0.0"></script>
 
 
-  </body>
+
+</body>
 </html>
