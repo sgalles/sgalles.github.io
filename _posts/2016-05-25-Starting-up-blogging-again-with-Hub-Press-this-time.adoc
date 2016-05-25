@@ -2,8 +2,9 @@
 
 My initial link:http://userstories.blogspot.fr/[old blog] was created using Blogger. I have sparsely posted on this blog over the last few years, essentially because I didn't want to invest too much time on it, but also because I missed a more effective tool that would make the writing of tech blog post a much more pleasant experience.
 
-So, this is my first post using link:http://hubpress.io/[HubPress] and it definitly is a very effective, lightweight tool.
+So, this is my first post using link:http://hubpress.io/[HubPress] and it definitely is a very effective, lightweight, tool.
 
 I mean... both a WYSIWYG editor, with link:http://asciidoctor.org/docs/user-manual/[AsciiDoc markup] and hosted by GitHub...that's just perfect.
 
-You'll find here most of my old blog post converted 
+You'll find here most of my old Blogger posts automatically converted to HubPress (how ? more about this in an upcoming article, and the meantime, see link:https://github.com/sgalles/ceylon-blogger-to-hubpress[this])
+  
