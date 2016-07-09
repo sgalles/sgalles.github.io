@@ -11,3 +11,6 @@ Like the author I spent several months trying to find out the right envirronemen
 * Lua
 * ...
 
+
+QBAsic + DosBoX
+CTRL+SCROLL LOCK instead of CTRL+Break
