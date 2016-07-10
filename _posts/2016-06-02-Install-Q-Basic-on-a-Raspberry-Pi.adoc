@@ -1,15 +1,17 @@
-= Teaching a kid how to write computer programs, which language IDE ?
+= Install QBasic on a Raspberry Pi
 
 A few days ago I stumble upon link:http://www.nicolasbize.com/blog/30-years-later-qbasic-is-still-the-best/[this blog entry].
 
-Like the author I spent several months trying to find out the right envirronement to teach kids basic knowledge of programming.
+Like the author I spent several months trying to find out the right environnement to teach kids basic knowledge of programming.
 
 * link:https://scratch.mit.edu/[Scratch]
-* lin:https://processing.org/[Processing]
+* link:https://processing.org/[Processing]
 * Python
 * ZX81 Basic 
 * Lua
 * ...
+
+In my opinion, all these options are nice but either the language is already too advanced (Python) or it is visual programming (Scratch) and I'm not fond of visual programming...I looking for the direct and simple experience of coding. No clutter, no mouse. The explanation must be about code, not other artifacts.
 
 
 QBAsic + DosBoX
