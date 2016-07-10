@@ -11,8 +11,17 @@ Like the author I spent several months trying to find out the right environnemen
 * Lua
 * ...
 
-In my opinion, all these options are nice but either the language is already too advanced (Python) or it is visual programming (Scratch) and I'm not fond of visual programming...I looking for the direct and simple experience of coding. No clutter, no mouse. The explanation must be about code, not other artifacts.
+In my opinion, all these options are nice but either the language is already too advanced (Python) or it is visual programming (Scratch) and I'm not fond of visual programming...I looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. The explanation must simply be about code, not other artifacts.
 
+So I ended up thinking that indeed QBasic had the right balance.
+
+So, how do you install QBasic on a Raspberry pi ?
+
+At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]
+
+I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (and yet it was on a Pi 3)
+
+FYI
 
 QBAsic + DosBoX
 CTRL+SCROLL LOCK instead of CTRL+Break
