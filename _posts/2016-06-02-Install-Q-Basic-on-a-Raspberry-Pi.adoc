@@ -11,17 +11,18 @@ Like the author I spent several months trying to find out the right environnemen
 * Lua
 * ...
 
-In my opinion, all these options are nice but either the language is already too advanced (Python) or it is visual programming (Scratch) and I'm not fond of visual programming...I looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. The explanation must simply be about code, not other artifacts.
+In my opinion, all these options are nice but either the language is already too advanced (Python) or it is visual programming IDE (Scratch), and I'm not fond of visual programming... I was looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. The explanation must simply be about programming concepts.
 
-So I ended up thinking that indeed QBasic had the right balance.
+So I ended up thinking that, indeed, QBasic and its IDE had the right balance (and still I didn't learn on QBasic, it was ZX81 Basic for me...). 
 
 So, how do you install QBasic on a Raspberry pi ?
 
-At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]
 
-I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (and yet it was on a Pi 3)
+At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]. I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (and yet it was on a Pi 3, it means that QB64 necessitates a much more powerful hardware). FYI if you still want to compile QB64 for the Pi, you must add the directive `#define QB64_NOT_X86` at the beginning of source file `source/internal/c/os.sh`. 
 
-FYI
+So the right combination seems to be the orginal QBasic with DOSBox.
+
+First download QBasic from ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe 
 
 QBAsic + DosBoX
 CTRL+SCROLL LOCK instead of CTRL+Break
