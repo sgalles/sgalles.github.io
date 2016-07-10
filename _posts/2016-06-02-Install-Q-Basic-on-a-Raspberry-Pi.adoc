@@ -22,7 +22,13 @@ At first I thought it would have been a good idea to use link:http://www.qb64.ne
 
 So the right combination seems to be the orginal QBasic with DOSBox.
 
-First download QBasic from ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe 
+# Download QBasic
+
+First download QBasic from the Microsoft FTP server. The server does not support active FTP, and not all browsers can do passive FTP. So it easier to use _wget_
+
+....
+wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
+....
 
 QBAsic + DosBoX
 CTRL+SCROLL LOCK instead of CTRL+Break
