@@ -61,7 +61,7 @@ Then, modify the DOSBox configuration file at `~/.dosbox` :
   
 The `qbasic` alias will activate the fullscreen mode, but you can leave it with `ALT+Enter`   
 
-# Problem : CTRL+Break doesn't work in QBasic with DOSBox
+# Problem with CTRL+Break
 
 If you want to quit a program that doesn't stop, it turns out that `CTRL+Break` doesn't work for QBasic in DOSBox. `CTRL+ScrollLock` is a known workaround for this problem, but for some reason it doesn't always work for me. Worst case you can still use `CTRL+F9` to qui DOSBox.
 
