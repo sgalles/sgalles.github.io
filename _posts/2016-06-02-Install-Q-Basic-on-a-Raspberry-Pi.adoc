@@ -18,7 +18,7 @@ So I ended up thinking that, indeed, QBasic and its envirronment had the right b
 So, how do you install QBasic on a Pi ?
 
 
-At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]. I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (maybe I did not use the right compilation flags ?). If you want to try this out, you must add the directive `#define QB64_NOT_X86` at the beginning of source file `source/internal/c/os.sh`, else it won't compile for the Pi.
+At first I thought it was a good idea to use link:http://www.qb64.net/[QB64]. I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (maybe I did not use the right compilation flags ? I don't know...). If you want to try this out, you must add the directive `#define QB64_NOT_X86` at the beginning of source file `source/internal/c/os.sh`, else it won't compile for the Pi.
 
 So, instead, I decided to go with something more lightweight : the orginal QBasic with DOSBox.
 
@@ -39,19 +39,19 @@ wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
 dosbox olddos.exe
 ....
  
-Now you can create an alias `qbasic` to launch qbasic (add this line to you `~/ .bash_aliases` file if you want to keep it after reboot)
+Now you can create an alias `qbasic` to launch QBasic (add this line to your `~/ .bash_aliases` file if you want to keep it after reboot)
 
 ....
 alias qbasic='dosbox  ~/opt/olddos/QBASIC.EXE -fullscreen'
 ....
 
-Now you should be able to launch QBasic with this alias
+You should now be able to launch QBasic with this alias
 
 # Adjust fullscreen mode 
 
-You may have to adjust your DOSBox settings if you want to use the fullscreen mode. First, you need the resolution of your screen, for instance mine is `1280x1024` (you can find your resolution with the command `xdpyinfo  | grep 'dimensions:'` )
+You may have to adjust your DOSBox settings if you want to use a real fullscreen mode. First, you need the resolution of your screen, for instance mine is `1280x1024`. You can find your resolution with the command `xdpyinfo  | grep 'dimensions:'` 
 
-Then, in the DOSBox configuration file at `~/.dosbox` :
+Then, modify the DOSBox configuration file at `~/.dosbox` :
 
 * In section `sdl`
   - change the value of `fullresolution` to your resolution
@@ -63,11 +63,5 @@ The `qbasic` alias will activate the fullscreen mode, but you can leave it with 
 
 # Problem : CTRL+Break doesn't work in QBasic with DOSBox
 
-If you want to quit a program that doesn't stop, it turns out that `CTRL+Break` doesn't work for QBasic in DOSBox. `CTRL+ScrollLock` is a now workaround for this problem, but it doesn't always work for me. 
+If you want to quit a program that doesn't stop, it turns out that `CTRL+Break` doesn't work for QBasic in DOSBox. `CTRL+ScrollLock` is a known workaround for this problem, but for some reason it doesn't always work for me. Worst case you can still use `CTRL+F9` to qui DOSBox.
 
-Usually when you can to quit a program 
-
-QBAsic + DosBoX
-CTRL+SCROLL LOCK instead of CTRL+Break
-
-Launch fullscreen : http://ubuntuforums.org/showthread.php?t=1779472
