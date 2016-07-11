@@ -13,7 +13,7 @@ Like the author I spent several months trying to find out the right environnemen
 
 In my opinion, all these options are nice but either the language is already too advanced (Python) or it is a visual programming IDE (Scratch), and I'm not fond of visual programming... I was looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. I wanted the explanation to simply be about programming concepts.
 
-So I ended up thinking that, indeed, QBasic and its envirronment had the right balance (and still I didn't learn on QBasic, it was ZX81 Basic for me...). Now, I'd like to have this available on my Raspberry Pi.
+So I ended up thinking that, indeed, QBasic and its environment had the right balance (and still I didn't learn on QBasic, it was ZX81 Basic for me...). 
 
 So, how do you install QBasic on a Pi ?
 
