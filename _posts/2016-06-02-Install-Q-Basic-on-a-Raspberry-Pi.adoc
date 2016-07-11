@@ -13,22 +13,31 @@ Like the author I spent several months trying to find out the right environnemen
 
 In my opinion, all these options are nice but either the language is already too advanced (Python) or it is visual programming IDE (Scratch), and I'm not fond of visual programming... I was looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. The explanation must simply be about programming concepts.
 
-So I ended up thinking that, indeed, QBasic and its IDE had the right balance (and still I didn't learn on QBasic, it was ZX81 Basic for me...). 
+So I ended up thinking that, indeed, QBasic and its IDE had the right balance (and still I didn't learn on QBasic, it was ZX81 Basic for me...). Now, I'd like to have this available on my Raspberry Pi.
 
-So, how do you install QBasic on a Raspberry pi ?
+So, how do you install QBasic on a Pi ?
 
 
-At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]. I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (and yet it was on a Pi 3, it means that QB64 necessitates a much more powerful hardware). FYI if you still want to compile QB64 for the Pi, you must add the directive `#define QB64_NOT_X86` at the beginning of source file `source/internal/c/os.sh`. 
+At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]. I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (and yet it was on a Pi 3, I guess it means that QB64 necessitates a much more hardware). FYI if you still want to compile QB64 for the Pi, you must add the directive `#define QB64_NOT_X86` at the beginning of source file `source/internal/c/os.sh`. 
 
-So the right combination seems to be the orginal QBasic with DOSBox.
+Instead, I decided to go with something more lightweight : the orginal QBasic with DOSBox.
 
-# Download QBasic
 
-First download QBasic from the Microsoft FTP server. The server does not support active FTP, and not all browsers can do passive FTP. So it easier to use _wget_
+First, if it is not already installed, install DOSBox
 
 ....
+sudo apt-get install dosbox
+....
+
+Then download QBasic from the Microsoft FTP server. The server does not support active FTP, and not all browsers can do passive FTP. So it easier to use _wget_. Plus we are going to create a directory and use DOSBox to extract the archive in this directory.
+
+....
+mkdir -p ~/opt/olddos
+cd ~/opt/olddos
 wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
+dosbox olddos.exe
 ....
+ 
 
 QBAsic + DosBoX
 CTRL+SCROLL LOCK instead of CTRL+Break
