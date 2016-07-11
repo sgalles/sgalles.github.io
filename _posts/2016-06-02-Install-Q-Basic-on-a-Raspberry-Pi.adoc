@@ -26,24 +26,27 @@ So, instead, I decided to go with something more lightweight : the orginal QBasi
 
 First, if it is not already installed, install DOSBox
 
-....
+[source,bash]
+----
 sudo apt-get install dosbox
-....
+----
 
 Then download QBasic from the Microsoft FTP server. The server does not support active FTP, and not all browsers can do passive FTP. So it easier to use _wget_. Plus we are going to create a directory and use DOSBox to extract the archive in this directory.
 
-....
+[source,bash]
+----
 mkdir -p ~/opt/olddos
 cd !$
 wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
 dosbox olddos.exe
-....
+----
  
 Now you can create an alias `qbasic` to launch QBasic (add this line to your `~/ .bash_aliases` file if you want to keep it after reboot)
 
-....
+[source,bash]
+----
 alias qbasic='dosbox  ~/opt/olddos/QBASIC.EXE -fullscreen'
-....
+----
 
 You should now be able to launch QBasic with this alias
 
