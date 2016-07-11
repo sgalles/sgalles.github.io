@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Install QBasic on a Raspberry Pi</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//sgalles.github.io/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//sgalles.github.io/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//sgalles.github.io/themes/Saga/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://sgalles.github.io/2016/06/02/Install-Q-Basic-on-a-Raspberry-Pi.html" />
+    
+    <meta property="og:site_name" content="void   techBlog()   { //... }" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Install QBasic on a Raspberry Pi" />
+    <meta property="og:description" content="A few days ago I stumble upon this blog entry. Like the author I spent several months trying to find out the right environnement to teach kids basic knowledge of programming. Scratch Processing Python ZX81 Basic Lua &amp;#8230;&amp;#8203; In..." />
+    <meta property="og:url" content="https://sgalles.github.io/2016/06/02/Install-Q-Basic-on-a-Raspberry-Pi.html" />
+    <meta property="article:published_time" content="2016-06-01T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-07-11T21:16:07.583Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Install QBasic on a Raspberry Pi" />
+    <meta name="twitter:description" content="A few days ago I stumble upon this blog entry. Like the author I spent several months trying to find out the right environnement to teach kids basic knowledge of programming. Scratch Processing Python ZX81 Basic Lua &amp;#8230;&amp;#8203; In..." />
+    <meta name="twitter:url" content="https://sgalles.github.io/2016/06/02/Install-Q-Basic-on-a-Raspberry-Pi.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "void   techBlog()   { //... }",
+    "author": {
+        "@type": "Person",
+        "name": "Stephane Gallès",
+        "image": "https://avatars.githubusercontent.com/u/153065?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://sgalles.github.io/"
+    },
+    "headline": "Install QBasic on a Raspberry Pi",
+    "url": "https://sgalles.github.io/2016/06/02/Install-Q-Basic-on-a-Raspberry-Pi.html",
+    "datePublished": "2016-06-01T22:00:00.000Z",
+    "dateModified": "2016-07-11T21:16:07.583Z",
+    "description": "A few days ago I stumble upon this blog entry. Like the author I spent several months trying to find out the right environnement to teach kids basic knowledge of programming. Scratch Processing Python ZX81 Basic Lua &amp;#8230;&amp;#8203; In..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="void   techBlog()   { //... }" href="https://sgalles.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://sgalles.github.io">void   techBlog()   { //... }</a>
+        <span class="blog-description">My attemps to arrange 0 and 1 and make something vaguely useful</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Install QBasic on a Raspberry Pi</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1464818400" datetime="2016-06-02T00:00" title="02 June 2016">2016-06-02 00:00:00<ago class="ago"></time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="">Stephane Gallès</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A few days ago I stumble upon <a href="http://www.nicolasbize.com/blog/30-years-later-qbasic-is-still-the-best/">this blog entry</a>.</p>
+</div>
+<div class="paragraph">
+<p>Like the author I spent several months trying to find out the right environnement to teach kids basic knowledge of programming.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://scratch.mit.edu/">Scratch</a></p>
+</li>
+<li>
+<p><a href="https://processing.org/">Processing</a></p>
+</li>
+<li>
+<p>Python</p>
+</li>
+<li>
+<p>ZX81 Basic</p>
+</li>
+<li>
+<p>Lua</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In my opinion, all these options are nice but either the language is already too advanced (Python) or it is a visual programming IDE (Scratch), and I&#8217;m not fond of visual programming&#8230;&#8203; I was looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. I wanted the explanation to simply be about programming concepts.</p>
+</div>
+<div class="paragraph">
+<p>So I ended up thinking that, indeed, QBasic and its environment had the right balance (and still I didn&#8217;t learn on QBasic, it was ZX81 Basic for me&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>So, how do you install QBasic on a Pi ?</p>
+</div>
+<div class="paragraph">
+<p>At first I thought it was a good idea to use <a href="http://www.qb64.net/">QB64</a>. I recompiled it to test it on the Pi, and it turns out that the result was <em>way</em> too slow&#8230;&#8203;barely usable&#8230;&#8203; (maybe I did not use the right compilation flags ? I don&#8217;t know&#8230;&#8203;). If you want to try this out, you must add the directive <code>#define QB64_NOT_X86</code> at the beginning of source file <code>source/internal/c/os.sh</code>, else it won&#8217;t compile for the Pi.</p>
+</div>
+<div class="paragraph">
+<p>So, instead, I decided to go with something more lightweight : the orginal QBasic with DOSBox.</p>
+</div>
+</div>
+</div>
+<h1 id="_install_dosbox_and_qbasic" class="sect0">Install DOSBox and QBasic</h1>
+<div class="paragraph">
+<p>First, if it is not already installed, install DOSBox</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo apt-get install dosbox</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then download QBasic from the Microsoft FTP server. The server does not support active FTP, and not all browsers can do passive FTP. So it easier to use <em>wget</em>. Plus we are going to create a directory and use DOSBox to extract the archive in this directory.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>mkdir -p ~/opt/olddos
+cd !$
+wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
+dosbox olddos.exe</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can create an alias <code>qbasic</code> to launch QBasic (add this line to your <code>~/ .bash_aliases</code> file if you want to keep it after reboot)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>alias qbasic='dosbox  ~/opt/olddos/QBASIC.EXE -fullscreen'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should now be able to launch QBasic with this alias</p>
+</div>
+<h1 id="_adjust_fullscreen_mode" class="sect0">Adjust fullscreen mode</h1>
+<div class="paragraph">
+<p>You may have to adjust your DOSBox settings if you want to use a real fullscreen mode. First, you need the resolution of your screen, for instance mine is <code>1280x1024</code>. You can find your resolution with the command <code>xdpyinfo  | grep 'dimensions:'</code></p>
+</div>
+<div class="paragraph">
+<p>Then, modify the DOSBox configuration file at <code>~/.dosbox</code> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In section <code>sdl</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>change the value of <code>fullresolution</code> to your resolution</p>
+</li>
+<li>
+<p>change the value of <code>output</code> to <code>overlay</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In section <code>render</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>change the value of <code>aspect</code> to <code>true</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>qbasic</code> alias will activate the fullscreen mode, but you can leave it with <code>ALT+Enter</code></p>
+</div>
+<h1 id="_problem_with_ctrl_break" class="sect0">Problem with CTRL+Break</h1>
+<div class="paragraph">
+<p>If you want to quit a program that doesn&#8217;t stop, it turns out that <code>CTRL+Break</code> doesn&#8217;t work for QBasic in DOSBox. <code>CTRL+ScrollLock</code> is a known workaround for this problem, but for some reason it doesn&#8217;t always work for me. Worst case you can still use <code>CTRL+F9</code> to qui DOSBox.</p>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'voidtechblog'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">void   techBlog()   { //... }</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+    <script src="//sgalles.github.io/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    
+</body>
+</html>
