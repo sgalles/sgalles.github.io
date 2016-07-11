@@ -11,16 +11,16 @@ Like the author I spent several months trying to find out the right environnemen
 * Lua
 * ...
 
-In my opinion, all these options are nice but either the language is already too advanced (Python) or it is visual programming IDE (Scratch), and I'm not fond of visual programming... I was looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. The explanation must simply be about programming concepts.
+In my opinion, all these options are nice but either the language is already too advanced (Python) or it is a visual programming IDE (Scratch), and I'm not fond of visual programming... I was looking for the direct and simple experience of coding. No clutter, no mouse, no a-thousand-icons-all-over-the-screen. I wanted the explanation to simply be about programming concepts.
 
-So I ended up thinking that, indeed, QBasic and its IDE had the right balance (and still I didn't learn on QBasic, it was ZX81 Basic for me...). Now, I'd like to have this available on my Raspberry Pi.
+So I ended up thinking that, indeed, QBasic and its envirronment had the right balance (and still I didn't learn on QBasic, it was ZX81 Basic for me...). Now, I'd like to have this available on my Raspberry Pi.
 
 So, how do you install QBasic on a Pi ?
 
 
-At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]. I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (and yet it was on a Pi 3, I guess it means that QB64 necessitates a much more hardware). FYI if you still want to compile QB64 for the Pi, you must add the directive `#define QB64_NOT_X86` at the beginning of source file `source/internal/c/os.sh`. 
+At first I thought it would have been a good idea to use link:http://www.qb64.net/[QB64]. I recompiled it to test it on the Pi, and it turns out that the result was _way_ too slow...barely usable... (maybe I did not use the right compilation flags ?). If you want to try this out, you must add the directive `#define QB64_NOT_X86` at the beginning of source file `source/internal/c/os.sh`, else it won't compile for the Pi.
 
-Instead, I decided to go with something more lightweight : the orginal QBasic with DOSBox.
+So, instead, I decided to go with something more lightweight : the orginal QBasic with DOSBox.
 
 # Install DOSBox and QBasic
 
