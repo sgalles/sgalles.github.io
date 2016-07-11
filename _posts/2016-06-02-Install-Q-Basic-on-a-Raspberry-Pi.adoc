@@ -2,7 +2,7 @@
 
 A few days ago I stumble upon link:http://www.nicolasbize.com/blog/30-years-later-qbasic-is-still-the-best/[this blog entry].
 
-Like the author I spent several months trying to find out the right environnement to teach kids basic knowledge of programming.
+Like the author I spent several months trying to find out the right environment to teach kids basic knowledge of programming.
 
 * link:https://scratch.mit.edu/[Scratch]
 * link:https://processing.org/[Processing]
