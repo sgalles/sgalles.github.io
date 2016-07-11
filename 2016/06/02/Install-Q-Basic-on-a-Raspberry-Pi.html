@@ -22,7 +22,7 @@
     <meta property="og:description" content="A few days ago I stumble upon this blog entry. Like the author I spent several months trying to find out the right environment to teach kids basic knowledge of programming. Scratch Processing Python ZX81 Basic Lua &amp;#8230;&amp;#8203; In..." />
     <meta property="og:url" content="https://sgalles.github.io/2016/06/02/Install-Q-Basic-on-a-Raspberry-Pi.html" />
     <meta property="article:published_time" content="2016-06-01T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-07-11T21:17:40.695Z" />
+    <meta property="article:modified_time" content="2016-07-11T21:20:09.690Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Install QBasic on a Raspberry Pi" />
@@ -44,7 +44,7 @@
     "headline": "Install QBasic on a Raspberry Pi",
     "url": "https://sgalles.github.io/2016/06/02/Install-Q-Basic-on-a-Raspberry-Pi.html",
     "datePublished": "2016-06-01T22:00:00.000Z",
-    "dateModified": "2016-07-11T21:17:40.695Z",
+    "dateModified": "2016-07-11T21:20:09.690Z",
     "description": "A few days ago I stumble upon this blog entry. Like the author I spent several months trying to find out the right environment to teach kids basic knowledge of programming. Scratch Processing Python ZX81 Basic Lua &amp;#8230;&amp;#8203; In..."
 }
     </script>
@@ -128,28 +128,28 @@
 <div class="paragraph">
 <p>First, if it is not already installed, install DOSBox</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>sudo apt-get install dosbox</pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo apt-get install dosbox</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Then download QBasic from the Microsoft FTP server. The server does not support active FTP, and not all browsers can do passive FTP. So it easier to use <em>wget</em>. Plus we are going to create a directory and use DOSBox to extract the archive in this directory.</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>mkdir -p ~/opt/olddos
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir -p ~/opt/olddos
 cd !$
 wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
-dosbox olddos.exe</pre>
+dosbox olddos.exe</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Now you can create an alias <code>qbasic</code> to launch QBasic (add this line to your <code>~/ .bash_aliases</code> file if you want to keep it after reboot)</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>alias qbasic='dosbox  ~/opt/olddos/QBASIC.EXE -fullscreen'</pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">alias qbasic='dosbox  ~/opt/olddos/QBASIC.EXE -fullscreen'</code></pre>
 </div>
 </div>
 <div class="paragraph">
