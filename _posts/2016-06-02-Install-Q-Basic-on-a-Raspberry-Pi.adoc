@@ -33,11 +33,31 @@ Then download QBasic from the Microsoft FTP server. The server does not support 
 
 ....
 mkdir -p ~/opt/olddos
-cd ~/opt/olddos
+cd !$
 wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
 dosbox olddos.exe
 ....
  
+Now you can create an alias `qbasic` to launch qbasic (add this line to you `~/ .bash_aliases` file if you want to keep it after reboot)
+
+....
+alias qbasic='dosbox  ~/opt/olddos/QBASIC.EXE -fullscreen'
+....
+
+Now you should be able to launch QBasic with this alias
+
+You may have to adjust your DOSBox settings if you want to use the fullscreen mode. First, you need the resolution of your screen, for instance mine is `1280x1024` (you can find your resolution with the command `xdpyinfo  | grep 'dimensions:'` )
+
+Then, in the DOSBox configuration file at `~/.dosbox` :
+
+* In section `sdl`
+  - change the value of `fullresolution` to your resolution
+  - change the value of `output` to `overlay`
+* In section `render`
+  - change the value of `aspect` to `true`
+  
+The `qbasic` alias will activate the fullscreen mode, but you can leave it with `ALT+Enter`   
+
 
 QBAsic + DosBoX
 CTRL+SCROLL LOCK instead of CTRL+Break
