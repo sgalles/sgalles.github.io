@@ -22,6 +22,7 @@ At first I thought it would have been a good idea to use link:http://www.qb64.ne
 
 Instead, I decided to go with something more lightweight : the orginal QBasic with DOSBox.
 
+# Install DOSBox and QBasic
 
 First, if it is not already installed, install DOSBox
 
@@ -46,6 +47,8 @@ alias qbasic='dosbox  ~/opt/olddos/QBASIC.EXE -fullscreen'
 
 Now you should be able to launch QBasic with this alias
 
+# Adjust fullscreen mode 
+
 You may have to adjust your DOSBox settings if you want to use the fullscreen mode. First, you need the resolution of your screen, for instance mine is `1280x1024` (you can find your resolution with the command `xdpyinfo  | grep 'dimensions:'` )
 
 Then, in the DOSBox configuration file at `~/.dosbox` :
@@ -58,6 +61,11 @@ Then, in the DOSBox configuration file at `~/.dosbox` :
   
 The `qbasic` alias will activate the fullscreen mode, but you can leave it with `ALT+Enter`   
 
+# Problem : CTRL+Break doesn't work in QBasic with DOSBox
+
+If you want to quit a program that doesn't stop, it turns out that `CTRL+Break` doesn't work for QBasic in DOSBox. `CTRL+ScrollLock` is a now workaround for this problem, but it doesn't always work for me. 
+
+Usually when you can to quit a program 
 
 QBAsic + DosBoX
 CTRL+SCROLL LOCK instead of CTRL+Break
