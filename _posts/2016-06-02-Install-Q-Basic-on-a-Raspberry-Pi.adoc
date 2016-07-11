@@ -41,7 +41,7 @@ wget --no-passive-ftp ftp://ftp.microsoft.com/softlib/mslfiles/olddos.exe
 dosbox olddos.exe
 ----
  
-Now you can create an alias `qbasic` to launch QBasic (add this line to your `~/ .bash_aliases` file if you want to keep it after reboot)
+Now you can create an alias `qbasic` to launch QBasic (add this line to your `~/.bash_aliases` file if you want to keep it after reboot)
 
 [source,bash]
 ----
